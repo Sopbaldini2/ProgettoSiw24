@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.siw.model.*;
 
-public interface ClienteRepository extends CrudRepository<Cliente,Long>{
+public interface LocationRepository extends CrudRepository<Location,Long>{
 
 }

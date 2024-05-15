@@ -16,7 +16,7 @@ import java.util.Optional;
  * The UserService handles logic for Users.
  */
 @Service
-public class UserService {
+public class ClienteService {
 
     @Autowired
     protected ClienteRepository clienteRepository;

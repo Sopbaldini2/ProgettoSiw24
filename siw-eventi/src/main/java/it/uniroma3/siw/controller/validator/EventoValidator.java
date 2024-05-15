@@ -6,6 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.model.Evento;
+import it.uniroma3.siw.repository.EventoRepository;
 
 @Component
 public class EventoValidator implements Validator {
