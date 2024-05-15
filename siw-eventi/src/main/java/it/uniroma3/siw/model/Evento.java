@@ -26,10 +26,8 @@ public class Evento {
 	
 	@OneToMany(mappedBy="evento")
 	private List<Recensione> recensioni;
-	
 	@ManyToMany
-	private List<Cliente> collaboratori;
-	
+	private List<Dipendente> collaboratori;
 	@ManyToOne
 	private Location location;
 	@ManyToMany(mappedBy="eventi")
@@ -56,10 +54,10 @@ public class Evento {
 				&& Objects.equals(prezzo, other.prezzo) && Objects.equals(recensioni, other.recensioni)
 				&& Objects.equals(servizi, other.servizi) && Objects.equals(tipologia, other.tipologia);
 	}
-	public List<Cliente> getCollaboratori() {
+	public List<Dipendente> getCollaboratori() {
 		return collaboratori;
 	}
-	public void setCollaboratori(List<Cliente> collaboratori) {
+	public void setCollaboratori(List<Dipendente> collaboratori) {
 		this.collaboratori = collaboratori;
 	}
 	public Location getLocation() {
@@ -80,12 +78,7 @@ public class Evento {
 	public void setRecensioni(List<Recensione> recensioni) {
 		this.recensioni = recensioni;
 	}
-	public List<Cliente> getClienti() {
-		return collaboratori;
-	}
-	public void setClienti(List<Cliente> clienti) {
-		this.collaboratori = clienti;
-	}
+	
 	public String getTipologia() {
 		return tipologia;
 	}

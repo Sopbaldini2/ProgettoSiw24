@@ -16,8 +16,8 @@ public class EventoValidator implements Validator {
 	@Override
 	public void validate(Object o, Errors errors) {
 		Evento evento = (Evento)o;
-		if (evento.getTitle()!=null && evento.getYear()!=null 
-				&& eventoRepository.existsByTitleAndYear(evento.getTitle(), evento.getYear())) {
+		if (evento.getNome()!=null && evento.getData()!=null 
+				&& eventoRepository.existsByNomeAndData(evento.getNome(), evento.getData())) {
 			errors.reject("movie.duplicate");
 		}
 	}
