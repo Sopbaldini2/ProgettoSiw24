@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.siw.model.Cliente;
+import it.uniroma3.siw.repository.ClienteRepository;
 
 import java.util.ArrayList;
 import java.util.List;
