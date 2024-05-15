@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -28,7 +29,30 @@ public class Evento {
 	@ManyToMany
 	private List<Cliente> collaboratori;
 	
+	@ManyToOne
+	private Location location;
+	@ManyToMany(mappedBy="eventi")
+	private List<Servizio> servizi;
 	
+	
+	public List<Cliente> getCollaboratori() {
+		return collaboratori;
+	}
+	public void setCollaboratori(List<Cliente> collaboratori) {
+		this.collaboratori = collaboratori;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public List<Servizio> getServizi() {
+		return servizi;
+	}
+	public void setServizi(List<Servizio> servizi) {
+		this.servizi = servizi;
+	}
 	public List<Recensione> getRecensioni() {
 		return recensioni;
 	}
