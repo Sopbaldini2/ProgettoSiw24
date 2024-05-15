@@ -2,6 +2,7 @@ package it.uniroma3.siw.model;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -35,6 +36,26 @@ public class Evento {
 	private List<Servizio> servizi;
 	
 	
+	@Override
+	public int hashCode() {
+		return Objects.hash(collaboratori, data, descrizione, idEvento, location, nome, prezzo, recensioni, servizi,
+				tipologia);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Evento other = (Evento) obj;
+		return Objects.equals(collaboratori, other.collaboratori) && Objects.equals(data, other.data)
+				&& Objects.equals(descrizione, other.descrizione) && Objects.equals(idEvento, other.idEvento)
+				&& Objects.equals(location, other.location) && Objects.equals(nome, other.nome)
+				&& Objects.equals(prezzo, other.prezzo) && Objects.equals(recensioni, other.recensioni)
+				&& Objects.equals(servizi, other.servizi) && Objects.equals(tipologia, other.tipologia);
+	}
 	public List<Cliente> getCollaboratori() {
 		return collaboratori;
 	}
