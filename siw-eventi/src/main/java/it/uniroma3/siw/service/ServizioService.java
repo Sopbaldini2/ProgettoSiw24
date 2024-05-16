@@ -33,4 +33,7 @@ public class ServizioService {
 		return servizioRepository.existsByNome(nome);
 	}
 	
+	 public void delete(Servizio servizio) {
+	        servizioRepository.delete(servizio);
+	 }
 }

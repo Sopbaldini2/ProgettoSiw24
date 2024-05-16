@@ -3,12 +3,16 @@ package it.uniroma3.siw.cotroller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.model.Dipendente;
+import it.uniroma3.siw.model.Evento;
+import it.uniroma3.siw.model.Recensione;
+import it.uniroma3.siw.model.Servizio;
 import it.uniroma3.siw.service.DipendenteService;
 
 @Controller
@@ -53,5 +57,17 @@ public class DipendenteController {
 	}
 	
 	
-	
+	@DeleteMapping("/admin/servizio/{id}")
+    public String deleteServizio(@PathVariable("id") Long id, Model model) {
+        Dipendente dipendente = dipendenteService.findById(id);
+        if (dipendente != null) {
+            dipendenteService.delete(dipendente);
+            // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
+            return "redirect:/admin/indexDipendente";
+        } else {
+            // Nel caso in cui il servizio non esista
+            model.addAttribute("messaggioErrore", "Servizio non trovato");
+            return "admin/indexDipendente.html";
+            }
+        }
 }

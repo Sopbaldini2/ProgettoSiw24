@@ -155,11 +155,11 @@ public class EventoController {
 	
 	@DeleteMapping("/admin/evento/{eventoId}/recensione/{recensioneId}")
     public String cancellaRecensione(@PathVariable("eventoId") Long eventoId, @PathVariable("recensioneId") Long recensioneId) {
-        Evento evento = eventoService.findById(eventoId); // Trova l'evento corrispondente
+        Evento evento = eventoService.findById(eventoId);
         if (evento != null) {
-            Recensione recensione = recensioneService.findById(recensioneId); // Trova la recensione da cancellare
-            if (recensione != null && recensione.getEvento().getIdEvento().equals(eventoId)) { // Assicurati che la recensione appartenga all'evento
-                recensioneService.delete(recensioneId); // Cancella la recensione
+            Recensione recensione = recensioneService.findById(recensioneId);
+            if (recensione != null && recensione.getEvento().getIdEvento().equals(eventoId)) { 
+                recensioneService.delete(recensioneId); 
                 return "La recensione con ID " + recensioneId + " è stata cancellata con successo.";
             } else {
                 return "La recensione con ID " + recensioneId + " non appartiene all'evento con ID " + eventoId + ".";

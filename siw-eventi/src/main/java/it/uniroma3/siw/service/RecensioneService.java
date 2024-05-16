@@ -24,4 +24,12 @@ public class RecensioneService {
 	        recensioneRepository.deleteById(recensioneId);
 	 }
 
+	public boolean existsById(Long id) {
+		return recensioneRepository.existsById(id);
+	}
+
+	public Iterable<Recensione> findAll() {
+		return recensioneRepository.findAll();
+	}
+
 }

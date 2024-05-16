@@ -3,6 +3,7 @@ package it.uniroma3.siw.cotroller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,4 +51,18 @@ public class ServizioController {
 		model.addAttribute("servizi", this.servizioService.findAll());
 		return "servizi.html";
 	}
+	
+	@DeleteMapping("/admin/servizio/{id}")
+    public String deleteServizio(@PathVariable("id") Long id, Model model) {
+        Servizio servizio = servizioService.findById(id);
+        if (servizio != null) {
+            servizioService.delete(servizio);
+            // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
+            return "redirect:/admin/indexServizio";
+        } else {
+            // Nel caso in cui il servizio non esista
+            model.addAttribute("messaggioErrore", "Servizio non trovato");
+            return "admin/indexServizio.html";
+            }
+        }
 }
