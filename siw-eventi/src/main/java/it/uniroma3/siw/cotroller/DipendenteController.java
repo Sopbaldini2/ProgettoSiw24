@@ -17,16 +17,22 @@ public class DipendenteController {
 	@Autowired
 	private DipendenteService dipendenteService;
 	
-	@GetMapping("/indexDipendente")
+	@GetMapping("/admin/indexDipendente")
 	public String indexDipendente() {
-		return "indexDipendente.html";
+		return "admin/indexDipendente.html";
 	}
 	
-	@PostMapping("/dipendente")
-	public String newDipendente(@ModelAttribute("dipendente") Dipendente dipendente) {
-		this.dipendenteService.save(dipendente);
-		return "redirect:dipendente/"+dipendente.getId();
+	@PostMapping("/admin/dipendente")
+	public String newDipendente(@ModelAttribute("dipendente") Dipendente dipendente, Model model) {
+		if (!dipendenteService.existsByNomeAndCognome(dipendente.getNome(), dipendente.getCognome())) {
+			this.dipendenteService.save(dipendente); 
+			model.addAttribute("dipendente", dipendente);
+			return "dipendente.html";
+		} else {
+			model.addAttribute("messaggioErrore", "Questo servizio esiste già");
+			return "admin/formNewDipendente.html"; 
 		}
+	}
 	
 	@GetMapping("/dipendente/{id}")
 	public String getDipendente(@PathVariable("id") Long id, Model model) {
