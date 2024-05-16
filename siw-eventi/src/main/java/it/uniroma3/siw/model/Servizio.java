@@ -21,7 +21,7 @@ public class Servizio {
 	
 	@ManyToOne
 	private Fornitore fornitore;
-	@ManyToMany
+	@ManyToMany(mappedBy="servizi")
 	private List<Evento> eventi;
 
 	public List<Evento> getEventi() {

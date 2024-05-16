@@ -23,6 +23,8 @@ public class Evento {
 	private Float prezzo;
 	private String descrizione;
 	private String tipologia;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate data;
 	
 	@OneToMany(mappedBy="evento")
 	private List<Recensione> recensioni;
@@ -30,7 +32,7 @@ public class Evento {
 	private List<Dipendente> collaboratori;
 	@ManyToOne
 	private Location location;
-	@ManyToMany(mappedBy="eventi")
+	@ManyToMany
 	private List<Servizio> servizi;
 	
 	
@@ -85,8 +87,6 @@ public class Evento {
 	public void setTipologia(String tipologia) {
 		this.tipologia = tipologia;
 	}
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate data;
 	
 	public Long getIdEvento() {
 		return idEvento;
