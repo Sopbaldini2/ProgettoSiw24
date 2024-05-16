@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.siw.controller.validator.EventoValidator;
 import it.uniroma3.siw.model.Evento;
+import it.uniroma3.siw.model.Recensione;
 import it.uniroma3.siw.model.Servizio;
-//import it.uniroma3.siw.service.DipendenteService;
 import it.uniroma3.siw.service.EventoService;
-//import it.uniroma3.siw.service.LocationService;
-//import it.uniroma3.siw.service.RecensioneService;
+import it.uniroma3.siw.service.RecensioneService;
 import it.uniroma3.siw.service.ServizioService;
 import jakarta.validation.Valid;
 
@@ -30,8 +30,8 @@ public class EventoController {
 	private EventoService eventoService;
 	@Autowired
 	private ServizioService servizioService;
-	//@Autowired
-	//private RecensioneService recensioneService;
+	@Autowired
+	private RecensioneService recensioneService;
 	@Autowired
 	private EventoValidator eventoValidator;
 	
@@ -144,5 +144,29 @@ public class EventoController {
 		}
 		return serviziToAdd;
 	}
+	
+	@PostMapping("/admin/evento/{id}/recensione")
+    public String aggiungiRecensione(@PathVariable("id") Long id, @ModelAttribute("recensione") Recensione recensione, Model model) {
+        Evento evento = eventoService.findById(id); 
+        recensione.setEvento(evento);
+        recensioneService.save(recensione); 
+        return "redirect:/admin/evento/" +id;
+        }
+	
+	@DeleteMapping("/evento/{eventoId}/recensione/{recensioneId}")
+    public String cancellaRecensione(@PathVariable("eventoId") Long eventoId, @PathVariable("recensioneId") Long recensioneId) {
+        Evento evento = eventoService.findById(eventoId); // Trova l'evento corrispondente
+        if (evento != null) {
+            Recensione recensione = recensioneService.findById(recensioneId); // Trova la recensione da cancellare
+            if (recensione != null && recensione.getEvento().getIdEvento().equals(eventoId)) { // Assicurati che la recensione appartenga all'evento
+                recensioneService.delete(recensioneId); // Cancella la recensione
+                return "La recensione con ID " + recensioneId + " è stata cancellata con successo.";
+            } else {
+                return "La recensione con ID " + recensioneId + " non appartiene all'evento con ID " + eventoId + ".";
+            }
+        } else {
+            return "Evento con ID " + eventoId + " non trovato.";
+        }
+    }
 	
 }
