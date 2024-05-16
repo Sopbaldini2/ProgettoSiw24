@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Servizio {
@@ -19,8 +18,7 @@ public class Servizio {
 	private String descrizione;
 	private Float prezzo;
 	
-	@ManyToOne
-	private Fornitore fornitore;
+	
 	@ManyToMany(mappedBy="servizi")
 	private List<Evento> eventi;
 
@@ -34,7 +32,7 @@ public class Servizio {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(descrizione, fornitore, id, nome, prezzo);
+		return Objects.hash(descrizione, id, nome, prezzo);
 	}
 
 	@Override
@@ -46,7 +44,7 @@ public class Servizio {
 		if (getClass() != obj.getClass())
 			return false;
 		Servizio other = (Servizio) obj;
-		return Objects.equals(descrizione, other.descrizione) && Objects.equals(fornitore, other.fornitore)
+		return Objects.equals(descrizione, other.descrizione)
 				&& Objects.equals(id, other.id) && Objects.equals(nome, other.nome)
 				&& Objects.equals(prezzo, other.prezzo);
 	}
@@ -83,11 +81,4 @@ public class Servizio {
 		this.prezzo = prezzo;
 	}
 
-	public Fornitore getFornitore() {
-		return fornitore;
-	}
-
-	public void setFornitore(Fornitore fornitore) {
-		this.fornitore = fornitore;
-	}
 }

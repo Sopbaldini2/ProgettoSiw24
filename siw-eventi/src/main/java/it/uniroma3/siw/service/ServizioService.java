@@ -27,5 +27,10 @@ public class ServizioService {
 	public void save(Servizio servizio) {
 		// TODO Auto-generated method stub
 		this.servizioRepository.save(servizio);
-	};
+	}
+
+	public boolean existsByNome(String nome) {
+		return servizioRepository.existsByNome(nome);
+	}
+	
 }

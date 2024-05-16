@@ -145,15 +145,15 @@ public class EventoController {
 		return serviziToAdd;
 	}
 	
-	@PostMapping("/admin/evento/{id}/recensione")
+	@PostMapping("/evento/{id}/recensione")
     public String aggiungiRecensione(@PathVariable("id") Long id, @ModelAttribute("recensione") Recensione recensione, Model model) {
         Evento evento = eventoService.findById(id); 
         recensione.setEvento(evento);
         recensioneService.save(recensione); 
-        return "redirect:/admin/evento/" +id;
+        return "redirect:/evento/" +id;
         }
 	
-	@DeleteMapping("/evento/{eventoId}/recensione/{recensioneId}")
+	@DeleteMapping("/admin/evento/{eventoId}/recensione/{recensioneId}")
     public String cancellaRecensione(@PathVariable("eventoId") Long eventoId, @PathVariable("recensioneId") Long recensioneId) {
         Evento evento = eventoService.findById(eventoId); // Trova l'evento corrispondente
         if (evento != null) {
