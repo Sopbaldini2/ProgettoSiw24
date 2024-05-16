@@ -10,5 +10,6 @@ import it.uniroma3.siw.model.Evento;
 public interface EventoRepository extends CrudRepository<Evento,Long>{
 	
 	public List<Evento> findByData(LocalDate data);
+	boolean existsByNomeAndData(String nome, LocalDate data);
 
 }
