@@ -57,8 +57,8 @@ public class DipendenteController {
 	}
 	
 	
-	@DeleteMapping("/admin/servizio/{id}")
-    public String deleteServizio(@PathVariable("id") Long id, Model model) {
+	@DeleteMapping("/admin/dipendente/{id}")
+    public String deleteDipendente(@PathVariable("id") Long id, Model model) {
         Dipendente dipendente = dipendenteService.findById(id);
         if (dipendente != null) {
             dipendenteService.delete(dipendente);
