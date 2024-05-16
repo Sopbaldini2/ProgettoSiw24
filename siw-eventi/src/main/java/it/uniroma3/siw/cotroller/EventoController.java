@@ -3,7 +3,6 @@ package it.uniroma3.siw.cotroller;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.uniroma3.siw.controller.validator.EventoValidator;
 import it.uniroma3.siw.model.Evento;
 import it.uniroma3.siw.model.Servizio;
-import it.uniroma3.siw.service.DipendenteService;
+//import it.uniroma3.siw.service.DipendenteService;
 import it.uniroma3.siw.service.EventoService;
-import it.uniroma3.siw.service.LocationService;
-import it.uniroma3.siw.service.RecensioneService;
+//import it.uniroma3.siw.service.LocationService;
+//import it.uniroma3.siw.service.RecensioneService;
 import it.uniroma3.siw.service.ServizioService;
 import jakarta.validation.Valid;
 
@@ -31,8 +30,8 @@ public class EventoController {
 	private EventoService eventoService;
 	@Autowired
 	private ServizioService servizioService;
-	@Autowired
-	private RecensioneService recensioneService;
+	//@Autowired
+	//private RecensioneService recensioneService;
 	@Autowired
 	private EventoValidator eventoValidator;
 	

@@ -8,7 +8,7 @@ import it.uniroma3.siw.model.Servizio;
 
 public interface ServizioRepository extends CrudRepository<Servizio,Long>{
 
-public boolean existsByNameAndSurname(String name, String surname );
+public boolean existsByNome(String nome );
 	
 	@Query(value="select * "
 			+ "from servizio s "
@@ -16,6 +16,6 @@ public boolean existsByNameAndSurname(String name, String surname );
 			+ "(select servizi_id "
 			+ "from evento_servizi "
 			+ "where evento_servizi.eventi_id = :eventoId)", nativeQuery=true)
-	public Iterable<Servizio> findServiziNotInEvento(@Param("movieId") Long id);
+	public Iterable<Servizio> findServiziNotInEvento(@Param("eventoId") Long id);
 
 }
