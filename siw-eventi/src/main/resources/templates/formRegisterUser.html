@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>
-		SiwMovie - Registrazione
+		Marik'Events
 	</title>
-	<link rel="stylesheet" href="/css/stile.css" />
+	<link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
@@ -26,14 +25,14 @@
 	<form th:action="@{/register}" method="POST">
 		<div>
 			<label>Nome</label>
-			<span><input type="text" placeholder="name" required th:field="${user.name}" /></span>
-			<span th:if="${#fields.hasErrors('user.name')}" th:errors="${user.name}" th:style="'color:red'">
+			<span><input type="text" placeholder="nome" required th:field="${user.nome}" /></span>
+			<span th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}" th:style="'color:red'">
 			</span>
 		</div>
 		<div>
 			<label>Cognome</label>
-			<span><input type="text" placeholder="surname" required th:field="${user.surname}" /></span>
-			<span th:if="${#fields.hasErrors('user.surname')}" th:errors="${user.surname}" th:style="'color:red'">
+			<span><input type="text" placeholder="cognome" required th:field="${user.cognome}" /></span>
+			<span th:if="${#fields.hasErrors('user.cognome')}" th:errors="${user.cognome}" th:style="'color:red'">
 			</span>
 		</div>
 		<div>
