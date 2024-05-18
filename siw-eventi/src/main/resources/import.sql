@@ -15,8 +15,8 @@ insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nex
 insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Francesco', 'Bavaro',30, 'francescobavaro@gmail.com', '3890345234');
 insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Sabrina', 'Mancini', 25, 'sabrinamancini@gmail.com', '3875442134');
 
-insert into servizio (id, nome, descrizione, prezzo) VALUES (nextval('artist_seq'), 'Audio/Video', 'Installazione e gestione di attrezzature audio e video', 400);
-insert into servizio (id, nome, descrizione, prezzo) values(nextval('artist_seq'), 'Fotografia', 'Cattura di momenti speciali attraverso foto e video.', 300);
-insert into servizio (id, nome, descrizione, prezzo) values(nextval('artist_seq'), 'Intrattenimento', 'Artisti, musicisti, DJ, animatori e spettacoli per intrattenere gli ospiti.', 2000);
-insert into servizio (id, nome, descrizione, prezzo) values(nextval('artist_seq'), 'Catering e Ristorazione', 'Fornitura di cibo e bevande per gli ospiti.', 1500);
-insert into servizio (id, nome, descrizione, prezzo) values(nextval('artist_seq'), 'Allestimenti e Design', 'Creazione di ambienti, scenografie e allestimenti personalizzati per l’evento.', 1000);
+insert into servizio (id, nome, descrizione, prezzo) VALUES (nextval('servizio_seq'), 'Audio/Video', 'Installazione e gestione di attrezzature audio e video', 400);
+insert into servizio (id, nome, descrizione, prezzo) values(nextval('servizio_seq'), 'Fotografia', 'Cattura di momenti speciali attraverso foto e video.', 300);
+insert into servizio (id, nome, descrizione, prezzo) values(nextval('servizio_seq'), 'Intrattenimento', 'Artisti, musicisti, DJ, animatori e spettacoli per intrattenere gli ospiti.', 2000);
+insert into servizio (id, nome, descrizione, prezzo) values(nextval('servizio_seq'), 'Catering e Ristorazione', 'Fornitura di cibo e bevande per gli ospiti.', 1500);
+insert into servizio (id, nome, descrizione, prezzo) values(nextval('servizio_seq'), 'Allestimenti e Design', 'Creazione di ambienti, scenografie e allestimenti personalizzati per l’evento.', 1000);
