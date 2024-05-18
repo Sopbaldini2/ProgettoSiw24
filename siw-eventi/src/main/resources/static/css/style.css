@@ -100,7 +100,6 @@ header .icons a:hover{
 	color: var(--pink);
 }
 
-
 header #toggler{
 	display: none;
 }
@@ -249,11 +248,11 @@ header .fa-bars{
 	position: relative;
 }
 
-.servizi .box-container .box .nuovo{
+.servizi .box-container .box .discount{
 	position: absolute;
 	top:1rem;
 	left:1rem;
-	padding:.7rem;
+	padding:.7rem 1rem;
 	font-size: 2rem;
 	color:var(--pink);
 	background: rgba(255, 51, 153, .05);
@@ -265,23 +264,27 @@ header .fa-bars{
 	position: relative;
 	text-align: center;
 	padding-top: 2rem;
-	overflow: hidden;
+	overflow:hidden;
 }
 
 .servizi .box-container .box .image img{
 	height: 25rem;
 }
 
-.servizi .box-container .box .image img{
+.servizi .box-container .box:hover .image img{
 	transform: scale(1.1);
 }
 
 .servizi .box-container .box .image .icons{
 	position: absolute;
-	bottom: 0;
+	bottom: -7rem;
 	left: 0;
 	right: 0;
 	display: flex;
+}
+
+.servizi .box-container .box:hover .image .icons{
+	bottom: 0;
 }
 
 .servizi .box-container .box .image .icons a{
@@ -300,7 +303,7 @@ header .fa-bars{
 }
 
 .servizi .box-container .box .image .icons a:hover{
-	background:#fff ;
+	background:#333 ;
 }
 
 .servizi .box-container .box .content{
@@ -409,7 +412,7 @@ header .fa-bars{
 .contact .row form .box{
     padding:1rem;
     font-size:1.7rem;
-    color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     text-transform: none;
     border: .1rem solid rgb(255, 255, 255);
     border-radius: .5rem;
