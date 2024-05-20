@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cerca Evento</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricerca Eventi</title>
 </head>
 <body>
-    <div><a href="#" class="logo"> Marik'<span>Events</span></a></div>
-    <h1>Cerca Evento per nome</h1>
-    <form action="/searchEventi" method="post">
-		<label for="data">Seleziona una data:</label>
-        <div>Data: <input type="text" name="data"></div>
-        <div><input type="submit"></div>
+    <h2>Ricerca Eventi</h2>
+    <form action="/eventi" method="GET">
+        <label for="nome">Nome Evento:</label>
+        <input type="text" id="nome" name="nome" placeholder="Inserisci il nome dell'evento">
+        <br>
+        <label for="dataInizio">Data Inizio:</label>
+        <input type="date" id="dataInizio" name="dataInizio">
+        <br>
+        <label for="dataFine">Data Fine:</label>
+        <input type="date" id="dataFine" name="dataFine">
+        <br>
+        <button type="submit">Cerca</button>
     </form>
 </body>
 </html>
