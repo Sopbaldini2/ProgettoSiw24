@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Index</title>
+</head>
+<body>
+    <h1>Employee Index Page</h1>
+    <a href="/admin/formNewDipendente">Add New Employee</a>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the list of employees -->
+            <tr th:each="dipendente : ${dipendenti}">
+                <td th:text="${dipendente.id}"></td>
+                <td th:text="${dipendente.nome}"></td>
+                <td th:text="${dipendente.cognome}"></td>
+                <td>
+                    <a th:href="@{/dipendente/{id}(id=${dipendente.id})}">View</a>
+                    <a th:href="@{/admin/formNewDipendente}">Edit</a>
+                    <form th:action="@{/admin/dipendente/{id}(id=${dipendente.id})}" method="post">
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
