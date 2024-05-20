@@ -38,12 +38,13 @@ import javax.sql.DataSource;
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
+    
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
         return authenticationConfiguration.getAuthenticationManager();
     }
 
+    
     @Bean
     protected SecurityFilterChain configure(final HttpSecurity httpSecurity) throws Exception{
         httpSecurity
@@ -75,6 +76,6 @@ import javax.sql.DataSource;
                 .deleteCookies("JSESSIONID")
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .clearAuthentication(true).permitAll();
-        return httpSecurity.build();
+                 return httpSecurity.build();
     }
 }
