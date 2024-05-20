@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Eventi</title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1>Eventi che soddisfano i requisiti</h1>
+	<div th:if="${eventi.isEmpty()}">Non ci sono eventi che soddisfano i requisiti</div>
+	<ul th:if="${!eventi.isEmpty()}">
+		<li th:each="evento : ${eventi}">
+			<a href="evento.html" th:href="@{'/evento' + '/' + ${evento.id}}"
+				th:text="${evento.nome} + ' (' + ${evento.data}+')'">Up! (20/03/2000)</a>
+		</li>
+	</ul>
+</body>
+
+</html>

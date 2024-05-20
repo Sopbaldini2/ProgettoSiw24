@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <title>Eventi</title>
+</head>
+<body>
+    <h1>Elenco degli Eventi</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop per visualizzare gli eventi -->
+            <th:block th:each="evento : ${eventi}">
+                <tr>
+                    <td th:text="${evento.idEvento}"></td>
+                    <td th:text="${evento.nome}"></td>
+                    <td th:text="${evento.data}"></td>
+                    <td>
+                        <!-- Link per visualizzare i dettagli dell'evento -->
+                        <a th:href="@{/evento/{id}(id=${evento.idEvento})}">Dettagli</a>
+                    </td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+    <a href="/admin/formNewEvento">Aggiungi Nuovo Evento</a>
+    <br>
+    <a href="/formSearchEventi">Cerca Eventi</a>
+</html>

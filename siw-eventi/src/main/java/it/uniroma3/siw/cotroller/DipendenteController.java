@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.model.Dipendente;
-import it.uniroma3.siw.model.Evento;
-import it.uniroma3.siw.model.Recensione;
-import it.uniroma3.siw.model.Servizio;
 import it.uniroma3.siw.service.DipendenteService;
 
 @Controller
