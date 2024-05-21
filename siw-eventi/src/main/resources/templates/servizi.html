@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Servizi</title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1>Servizi</h1>
+	<div th:if="${artists==null || artists.isEmpty()}">Non ci sono servizi nel sistema</div>
+	<ul>
+		<li th:each="servizio : ${servizi}">
+			<a th:href="@{'/servizio' + '/' + ${servizio.id}}"
+				th:text="${servizio.nome}">Fotografo</a>
+		</li>
+	</ul>
+</body>
+
+</html>

@@ -17,13 +17,12 @@ public class Dipendente {
 	
 	private String nome;
 	private String cognome;
-	private Integer compenso;
 	private String email;
 	private String telefono;
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(cognome, compenso, email, id, nome, organizzati, telefono);
+		return Objects.hash(cognome, email, id, nome, organizzati, telefono);
 	}
 
 	@Override
@@ -35,7 +34,7 @@ public class Dipendente {
 		if (getClass() != obj.getClass())
 			return false;
 		Dipendente other = (Dipendente) obj;
-		return Objects.equals(cognome, other.cognome) && Objects.equals(compenso, other.compenso)
+		return Objects.equals(cognome, other.cognome) 
 				&& Objects.equals(email, other.email) && Objects.equals(id, other.id)
 				&& Objects.equals(nome, other.nome) && Objects.equals(organizzati, other.organizzati)
 				&& Objects.equals(telefono, other.telefono);
@@ -63,14 +62,6 @@ public class Dipendente {
 
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
-	}
-
-	public Integer getCompenso() {
-		return compenso;
-	}
-
-	public void setCompenso(Integer compenso) {
-		this.compenso = compenso;
 	}
 
 	public String getEmail() {
