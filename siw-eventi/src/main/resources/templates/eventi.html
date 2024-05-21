@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Eventi</title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1>Eventi</h1>
+	<div th:if="${eventi==null || eventi.isEmpty()}">Non ci sono eventi nel sistema</div>
+	<ul>
+		<li th:each="evento : ${eventi}">
+			<a th:href="@{'/evento' + '/' + ${evento.id}}"
+				th:text="${evento.nome} + ' (' + ${evento.prezzo} + ')'">Up! (2000)</a>
+		</li>
+	</ul>
+</body>
+
+</html>

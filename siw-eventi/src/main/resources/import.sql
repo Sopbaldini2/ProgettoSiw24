@@ -7,13 +7,13 @@ insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values
 insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Notte dei Racconti Incantati','Evento sociale', '15-08-2024', 'serata di narrazioni e fantasia', 40);
 
 
-insert into dipendente (id, nome, cognome, compenso, email, telefono) VALUES (nextval('dipendente_seq'), 'Alessandro', 'Abete', 30, 'alessandroabete@gmail.com', '3335678902');
-insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Martina', 'Bartolini', 25, 'martinabartolini@gmail.com', '3456673498');
-insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Asia', 'Bianchi', 33, 'asiabianchi@gmail.com', '3485678879');
-insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Rachele', 'Paddeo', 27, 'rachelepaddeo@gmail.com', '3466568870');
-insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Riccardo', 'gaffi', 28, 'riccardogaffi@gmial.com', '3778900987');
-insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Francesco', 'Bavaro',30, 'francescobavaro@gmail.com', '3890345234');
-insert into dipendente (id, nome, cognome, compenso, email, telefono) values(nextval('dipendente_seq'), 'Sabrina', 'Mancini', 25, 'sabrinamancini@gmail.com', '3875442134');
+insert into dipendente (id, nome, cognome, email, telefono) VALUES (nextval('dipendente_seq'), 'Alessandro', 'Abete', 'alessandroabete@gmail.com', '3335678902');
+insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Martina', 'Bartolini', 'martinabartolini@gmail.com', '3456673498');
+insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Asia', 'Bianchi', 'asiabianchi@gmail.com', '3485678879');
+insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Rachele', 'Paddeo', 'rachelepaddeo@gmail.com', '3466568870');
+insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Riccardo', 'gaffi', 'riccardogaffi@gmial.com', '3778900987');
+insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Francesco', 'Bavaro', 'francescobavaro@gmail.com', '3890345234');
+insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Sabrina', 'Mancini', 'sabrinamancini@gmail.com', '3875442134');
 
 insert into servizio (id, nome, descrizione, prezzo) VALUES (nextval('servizio_seq'), 'Audio/Video', 'Installazione e gestione di attrezzature audio e video', 400);
 insert into servizio (id, nome, descrizione, prezzo) values(nextval('servizio_seq'), 'Fotografia', 'Cattura di momenti speciali attraverso foto e video.', 300);

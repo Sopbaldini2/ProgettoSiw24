@@ -89,8 +89,8 @@ public class EventoController {
 	}
 
 	@PostMapping("/searchEventi")
-	public String searchEventi(Model model, @RequestParam LocalDate data) {
-		model.addAttribute("eventi", this.eventoService.findBydata(data));
+	public String searchEventi(Model model, @RequestParam String nome) {
+		model.addAttribute("eventi", this.eventoService.findByNome(nome));
 		return "foundEventi.html";
 	}
 	

@@ -29,7 +29,7 @@ public class EventoService {
 		
 	}
 
-	public List<Evento> findBydata(LocalDate data) {
-		return eventoRepository.findByData(data);
+	public List<Evento> findByNome(String nome) {
+		return eventoRepository.findByNome(nome);
 	}
 }
