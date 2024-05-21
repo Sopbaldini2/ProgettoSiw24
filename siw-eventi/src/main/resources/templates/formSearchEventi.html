@@ -7,17 +7,13 @@
 </head>
 <body>
     <h2>Ricerca Eventi</h2>
-    <form action="/eventi" method="GET">
-        <label for="nome">Nome Evento:</label>
-        <input type="text" id="nome" name="nome" placeholder="Inserisci il nome dell'evento">
-        <br>
-        <label for="dataInizio">Data Inizio:</label>
-        <input type="date" id="dataInizio" name="dataInizio">
-        <br>
-        <label for="dataFine">Data Fine:</label>
-        <input type="date" id="dataFine" name="dataFine">
-        <br>
-        <button type="submit">Cerca</button>
+    
+	<h1>Cerca evento per nome</h1>
+	<form th:action="@{/searchEventi}" method="post">
+		<div>Nome: <input type="text" th:value="${nome}" name="nome" />
+		</div>
+		<div><input type="submit" /></div>
+	</form>
     </form>
 </body>
 </html>
