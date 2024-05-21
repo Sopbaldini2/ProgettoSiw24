@@ -23,7 +23,7 @@
 	<ul>
 		<li th:each="evento : ${eventi}">
 			<a th:href="@{'/evento' + '/' + ${evento.id}}"
-				th:text="${evento.nome} + ' (' + ${evento.prezzo} + ')'">Up! (2000)</a>
+				th:text="${evento.nome} "> evento </a>
 		</li>
 	</ul>
 </body>
