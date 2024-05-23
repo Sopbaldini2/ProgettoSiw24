@@ -1,10 +1,10 @@
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Sinfonia delle Stelle', 'Festival', '10-08-2024' ,'concerto sotto il cielo stellato', 70);
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Serata enigmatica','Cena con spettacolo', '07-12-1022','un viaggio nel mistero', 50);
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Conferenza delle menti brillanti','Fiera', '24-02-2016','condivisione di conoscenze e idee innovative', 60);
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Avventura nelle nuvole','Sfide verticali', '18-06-2023','esperienza estrema di paracadutismo', 90);
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Mostra dei sapori del Mondo','Evento culinario', '27-04-2013', 'celebrazione delle diversità gastronomiche globali', 80);
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Giornata della Gioia','Festival', '01-01-2021','festa della musica e del benessere', 70);
-insert into evento (idEvento, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Notte dei Racconti Incantati','Evento sociale', '15-08-2024', 'serata di narrazioni e fantasia', 40);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Sinfonia delle Stelle', 'Festival', '10-08-2024' ,'concerto sotto il cielo stellato', 70);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Serata enigmatica','Cena con spettacolo', '07-12-1022','un viaggio nel mistero', 50);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Conferenza delle menti brillanti','Fiera', '24-02-2016','condivisione di conoscenze e idee innovative', 60);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Avventura nelle nuvole','Sfide verticali', '18-06-2023','esperienza estrema di paracadutismo', 90);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Mostra dei sapori del Mondo','Evento culinario', '27-04-2013', 'celebrazione delle diversità gastronomiche globali', 80);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Giornata della Gioia','Festival', '01-01-2021','festa della musica e del benessere', 70);
+insert into evento (id, nome, tipologia, data, descrizione, prezzo) values(nextval('evento_seq'), 'Notte dei Racconti Incantati','Evento sociale', '15-08-2024', 'serata di narrazioni e fantasia', 40);
 
 
 insert into dipendente (id, nome, cognome, email, telefono) VALUES (nextval('dipendente_seq'), 'Alessandro', 'Abete', 'alessandroabete@gmail.com', '3335678902');

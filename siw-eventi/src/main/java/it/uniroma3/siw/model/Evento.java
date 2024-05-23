@@ -17,7 +17,7 @@ import jakarta.persistence.OneToMany;
 public class Evento {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idEvento; 
+    private Long id; 
 	private String nome;
 	private Float prezzo;
 	private String descrizione;
@@ -35,7 +35,7 @@ public class Evento {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(collaboratori, data, descrizione, idEvento, nome, prezzo, recensioni, servizi,
+		return Objects.hash(collaboratori, data, descrizione, id, nome, prezzo, recensioni, servizi,
 				tipologia);
 	}
 	@Override
@@ -48,7 +48,7 @@ public class Evento {
 			return false;
 		Evento other = (Evento) obj;
 		return Objects.equals(collaboratori, other.collaboratori) && Objects.equals(data, other.data)
-				&& Objects.equals(descrizione, other.descrizione) && Objects.equals(idEvento, other.idEvento)
+				&& Objects.equals(descrizione, other.descrizione) && Objects.equals(id, other.id)
 			    && Objects.equals(nome, other.nome)
 				&& Objects.equals(prezzo, other.prezzo) && Objects.equals(recensioni, other.recensioni)
 				&& Objects.equals(servizi, other.servizi) && Objects.equals(tipologia, other.tipologia);
@@ -80,11 +80,11 @@ public class Evento {
 		this.tipologia = tipologia;
 	}
 	
-	public Long getIdEvento() {
-		return idEvento;
+	public Long getId() {
+		return id;
 	}
-	public void setIdEvento(Long idEvento) {
-		this.idEvento = idEvento;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;

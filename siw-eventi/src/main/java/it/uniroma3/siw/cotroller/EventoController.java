@@ -158,7 +158,7 @@ public class EventoController {
         Evento evento = eventoService.findById(eventoId);
         if (evento != null) {
             Recensione recensione = recensioneService.findById(recensioneId);
-            if (recensione != null && recensione.getEvento().getIdEvento().equals(eventoId)) { 
+            if (recensione != null && recensione.getEvento().getId().equals(eventoId)) { 
                 recensioneService.delete(recensioneId); 
                 return "La recensione con ID " + recensioneId + " è stata cancellata con successo.";
             } else {
