@@ -16,12 +16,12 @@
 		</div>
 	</header>
 
-	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<div><a href="/"><img src="/images/" width="50%"/></a></div>
     <h1>Dettagli evento</h1>
     <div th:if="${evento}">
         <span th:text="${evento.nome}">Up!</span>
         <span th:text="${evento.data}">20/20/2000</span>
-        <span th:text="'(' + ${evento.prezzo} + ')'">2000</span>
+        <span th:text="'(' + ${evento.prezzo} + ')'">Prezzo </span>
         <span th:text="${evento.tipologia}">Up!</span>
         <span th:text="${evento.descrizione}">Up!</span>
    <!-- lista recensioni, collaboratori e servizi-->
