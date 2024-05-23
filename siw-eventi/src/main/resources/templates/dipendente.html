@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<body>
+    <h1>Lista Dipendenti</h1>
+    <table>
+        <thead>
+            <tr>
+           
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="dipendente : ${dipendenti}">
+                <td th:text="${dipendente.nome}"></td>
+                <td th:text="${dipendente.cognome}"></td>
+                <td th:text="${dipendente.email}"></td>
+                <td th:text="${dipendente.telefono}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

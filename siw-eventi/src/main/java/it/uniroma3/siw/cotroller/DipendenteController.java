@@ -40,11 +40,11 @@ public class DipendenteController {
 		model.addAttribute("dipendente", this.dipendenteService.findById(id));
 		return "dipendente.html";
 	}
-	
+	/*riguarda */
 	@GetMapping("/dipendente")
 	public String getDipendenti(Model model) {
 		model.addAttribute("dipendenti", this.dipendenteService.findAll());
-		return "dipendenti.html";
+		return "dipendente.html";
 	}
 	
 	@GetMapping("/admin/formNewDipendente")
