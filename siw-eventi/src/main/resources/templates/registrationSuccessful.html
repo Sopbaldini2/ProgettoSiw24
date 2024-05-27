@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Marik'Events - Registrazione conclusa</title>
-	<link rel="stylesheet" href="/css/style.css" />
-</head>
-
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/successful.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+		
+	</head>
+	
 <body>
 	<header>
 		<div th:if="${userDetails}">
@@ -16,10 +27,13 @@
 			<a href="/login">Login</a>
 		</div>
 	</header>
+			
+		<header>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
 
-	<div>
-		<a href="/"><img src="/images/logo-siw.png" width="50%"/></a>
-	</div>
+		</header>
+		
 	<h1>Congratulazioni ti sei registrato!</h1>
 	<div>
 		<span>Nome: </span>
