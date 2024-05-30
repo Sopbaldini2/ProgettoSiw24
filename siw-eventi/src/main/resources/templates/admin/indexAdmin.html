@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>
-		Marik'Events - Homepage
-	</title>
-	<link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marik'Events - Homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-	<header>
-		<div th:if="${userDetails}">
-			<span th:text="${userDetails.username}"></span>
-			<a href="/logout">Logout</a>
-		</div>
-		<div th:unless="${user}">
-			<a href="/login">Login</a>
-		</div>
-	</header>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}">Utente</span>
+            <a href="/logout">Logout</a>
+        </div>
+        <div th:unless="${user}">
+            <a href="/login">Login</a>
+        </div>
+    </header>
 
+<<<<<<< HEAD
 	<div><img src="/images/logo-siw.png" width="50%" /></div>
 	<h1>Consulta l'archivio</h1>
 	<div>
@@ -46,6 +47,37 @@
 	<div>
 		<a href="/admin/indexRecensione">Operazioni sulle recensioni</a>
 	</div>
+=======
+    <div><img src="/images/logoM.png" alt="Logo Marik'Events" width="50%" /></div>
+
+    <h1>Consulta l'archivio</h1>
+    <div>
+        <a href="/eventi">Elenco degli eventi</a>
+    </div>
+    <div>
+        <a href="/servizi">Elenco dei servizi</a>
+    </div>
+    <div>
+        <a href="/dipendente">Elenco dei dipendenti</a>
+    </div>
+    <div>
+        <a href="/recensioni">Elenco delle recensioni</a>
+    </div>
+
+    <h1>Operazioni per amministratore</h1>
+    <div>
+        <a href="/admin/indexEvento">Operazioni sugli eventi</a>
+    </div>
+    <div>
+        <a href="/admin/indexServizio">Operazioni sui servizi</a>
+    </div>
+    <div>
+        <a href="/admin/indexDipendente">Operazioni sui dipendenti</a>
+    </div>
+    <div>
+        <a href="/admin/indexRecensione">Operazioni sulle recensioni</a>
+    </div>
+>>>>>>> branch 'main' of https://github.com/Sopbaldini2/ProgettoSiw24.git
 </body>
 
 </html>
