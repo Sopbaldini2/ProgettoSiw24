@@ -31,7 +31,7 @@ section{
 	color: #fff;
 	padding: 1rem;
 	margin: 2rem 0;
-	background: rgda(255, 51, 153, .05);
+	background: rgba(255, 51, 153, .05);
 }
 
 
@@ -61,7 +61,7 @@ header{
 	left: 0;
 	right: 0;
 	background: rgb(0, 0, 0);
-	padding: 2rem 9;
+	padding: 2rem 9%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
