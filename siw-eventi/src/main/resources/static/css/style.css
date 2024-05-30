@@ -330,6 +330,20 @@ header .fa-bars{
 	text-decoration: line-through;
 }
 
+.servizi .pulsante {
+	border-radius: 50%;
+	height: 4rem;
+	width: 4rem;
+	position: relative;
+}
+
+.servizi .pulsante .btn .fas{
+	position: absolute; /* Imposta la posizione assoluta per l'icona */
+    top: 50%; /* Sposta l'icona verticalmente al centro */
+    left: 50%; /* Sposta l'icona orizzontalmente al centro */
+    transform: translate(-50%, -50%);
+}
+
 .recensione .box-container{
 	display: flex;
 	flex-wrap: wrap;
