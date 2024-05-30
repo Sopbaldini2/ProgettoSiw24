@@ -21,6 +21,7 @@ public class Cliente {
 	private String cognome;
 	@NotBlank
 	private String email;
+	
 	private String telefono;
 	
 	@OneToMany

@@ -31,7 +31,7 @@ section{
 	color: #fff;
 	padding: 1rem;
 	margin: 2rem 0;
-	background: rgda(255, 51, 153, .05);
+	background: rgba(255, 51, 153, .05);
 }
 
 
@@ -61,7 +61,7 @@ header{
 	left: 0;
 	right: 0;
 	background: rgb(0, 0, 0);
-	padding: 2rem 9;
+	padding: 2rem 9%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -328,6 +328,20 @@ header .fa-bars{
 	color:#999;
 	font-weight: lighter;
 	text-decoration: line-through;
+}
+
+.servizi .pulsante {
+	border-radius: 50%;
+	height: 4rem;
+	width: 4rem;
+	position: relative;
+}
+
+.servizi .pulsante .btn .fas{
+	position: absolute; /* Imposta la posizione assoluta per l'icona */
+    top: 50%; /* Sposta l'icona verticalmente al centro */
+    left: 50%; /* Sposta l'icona orizzontalmente al centro */
+    transform: translate(-50%, -50%);
 }
 
 .recensione .box-container{

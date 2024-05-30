@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/recensione.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
+
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/evento">Eventi</a>
+				<a href="/servizi0">Servizi</a>
+				<a href="/recensione">Community</a>
+				<a href="/dipendente">About us</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+				<a href="/login" class="fas fa-user"></a>
+			</div>			
+			
+			
+		</header>
+		
+        <!-- header section ends -->
+        
+    <!-- Recensione section starts -->
+    
+    <h1 class="heading">Comm<span>unity</span></h1>
+  <div class="recensione">
+    <div class="box-container">
+        <div th:if="${recensioni == null || recensioni.isEmpty()}">Non ci sono recensioni nel sistema</div>
+        <div th:each="recensione : ${recensioni}" class="box">
+            <div class="stars">
+                <i class="fas fa-star" th:each="star : ${#numbers.sequence(1, recensione.voto)}"></i>
+            </div>
+            <p th:text="${recensione.commento}">commento</p>
+            <div class="user">
+                <!--<img th:src="@{${user.immagine}}" alt=""> -->
+                <div class="user-info">
+                    <h3 th:text="${recensione.cliente.nome}">Giovanni</h3>
+                    <span>Happy customer</span>
+                </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+        </div>
+    </div>
+ </div>  
+        <!-- Recensione section ends -->
+        
+        <!-- footer section starts -->
+        
+         <section class="footer">
+			 <div class="box-container">
+				 <div class="box">
+					 <h3>Quick Links</h3>
+					 <a href="/">Home</a>
+					 <a href="/dipendente">About us</a>
+					 <a href="/evento">Eventi</a>
+					 <a href="/servizio">Servizi</a>
+					 <a href="/recensione">Community</a>
+					 <a href="#contact">Contact</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Extra Links</h3>
+					 <a href="/login">My account</a>
+					 <a href="#">My Event</a>
+					 <a href="#">My favourite</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Contact Info</h3>
+					 <a href="#">+39 3375 46587</a>
+					 <a href="#">Example@gmail.com</a>
+					 <a href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara Sabazia</a>
+					 <img src="images/..." alt="">
+				 </div> 
+			 </div>
+			 
+			 <div class="credit"> Created by <span>Baldini Sophie & Catalano Veronica </span></div>
+		 </section>
+         <!-- footer section ends -->
+
+	</body>
+	
+</html>

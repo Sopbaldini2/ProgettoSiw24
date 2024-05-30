@@ -19,12 +19,25 @@ public class Recensione {
 	@ManyToOne
 	private Evento evento;
 	
+	@ManyToOne
+	private Cliente cliente;
+	
+	
 	public Evento getEvento() {
 		return evento;
 	}
 
 	public void setEvento(Evento evento) {
 		this.evento = evento;
+	}
+	
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@Override
