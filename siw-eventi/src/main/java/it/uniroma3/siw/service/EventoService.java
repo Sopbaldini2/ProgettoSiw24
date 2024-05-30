@@ -32,4 +32,9 @@ public class EventoService {
 	public List<Evento> findByNome(String nome) {
 		return eventoRepository.findByNome(nome);
 	}
+
+	public void delete(Evento evento) {
+		// TODO Auto-generated method stub
+		eventoRepository.delete(evento);
+	}
 }

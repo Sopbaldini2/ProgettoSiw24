@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Aggiorna evento
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
+	<h1>Aggiorna Evento</h1>
+	<div th:if="${evento}">
+		<div>
+			<span th:text="${evento.nome}">nome</span>
+			<span th:text="${evento.descrizione}">descrizione</span>
+			<span th:text="${evento.data}">10-12-2006</span>
+			<span th:text="${evento.tipologia}">tipologia</span>
+		</div>
+		
+
+		<div>
+			<h4>Servizi: </h4>
+		
+        <ul>
+            <li th:each="servizio : ${evento.servizi}">
+                <span th:text="${evento.nome}">Nome </span>
+                <span th:text="${evento.descrizione}">descrizione</span>
+            </li>
+        </ul>
+			<a th:href="@{'/admin/updateServizi/' + ${evento.id}}">
+				<button type="button">Modifica</button>
+			</a>
+		
+		</div>
+		<div th:unless="${servizio}">servizio non esistente</div>
+</body>
+
+</html>

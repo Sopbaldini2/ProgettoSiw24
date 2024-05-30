@@ -40,7 +40,7 @@ public class EventoController {
 		return "admin/indexEvento.html";
 	}
 	
-	@GetMapping(value="/admin/manageEvento")
+	@GetMapping("/admin/manageEvento")
 	public String manageEvento(Model model) {
 		model.addAttribute("movies", this.eventoService.findAll());
 		return "admin/manageEvento.html";
@@ -168,5 +168,19 @@ public class EventoController {
             return "Evento con ID " + eventoId + " non trovato.";
         }
     }
+	
+	@DeleteMapping("/admin/evento/{id}")
+    public String deleteEvento(@PathVariable("id") Long id, Model model) {
+        Evento Evento = eventoService.findById(id);
+        if (Evento != null) {
+            eventoService.delete(Evento);
+            // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
+            return "redirect:/admin/indexEvento";
+        } else {
+            // Nel caso in cui il Cuoco non esista
+            model.addAttribute("messaggioErrore", "Evento non trovato");
+            return "admin/indexEvento.html";
+            }
+        }
 	
 }

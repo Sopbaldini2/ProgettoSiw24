@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Scelta servizi</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1 th:text="'Servizi dell'evento ' + ${evento.nome}"></h1>
+	<div th:if="${evento.servizi.isEmpty()}">Non ci sono servizi per questo evento</div>
+	<ul>
+		<li th:each="servizio : ${evento.servizi}">
+			<span th:text="${servizio.name}+' '+${servizio.surname}"></span>
+			<a th:href="@{'/admin/removeservizioFromMovie/'+ ${servizio.id}+'/'+${movie.id}}">Cancella</a>
+		</li>
+	</ul>
+	<div>
+		Servizi che si possono aggiungere:
+		<ul>
+			<li th:each="servizio : ${servizioToAdd}">
+				<span th:text="${servizio.nome}"></span>
+				<a th:href="@{'/admin/addServizioToEvento/'+ ${servizio.id}+'/'+${evento.id}}">Aggiungi</a>
+			</li>
+		</ul>
+	<div>
+	<div>
+		<a th:href="@{'/admin/formUpdateEvento/'+ ${evento.id}}"><button type="button">Fine</button></a>
+	</div>
+</body>
+
+</html>

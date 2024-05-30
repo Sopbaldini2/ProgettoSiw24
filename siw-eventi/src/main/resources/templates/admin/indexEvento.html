@@ -7,31 +7,9 @@
     <title>Eventi</title>
 </head>
 <body>
-    <h1>Elenco degli Eventi</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Data</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Loop per visualizzare gli eventi -->
-            <th:block th:each="evento : ${eventi}">
-                <tr>
-                    <td th:text="${evento.idEvento}"></td>
-                    <td th:text="${evento.nome}"></td>
-                    <td th:text="${evento.data}"></td>
-                    <td>
-                        <!-- Link per visualizzare i dettagli dell'evento -->
-                        <a th:href="@{/evento/{id}(id=${evento.idEvento})}">Dettagli</a>
-                    </td>
-                </tr>
-            </th:block>
-        </tbody>
-    </table>
+    <h1>Gestione degli Eventi</h1>
+    <a href="/admin/manageEvento">Gestisci Evento</a>
+    <br>
     <a href="/admin/formNewEvento">Aggiungi Nuovo Evento</a>
     <br>
     <a href="/formSearchEventi">Cerca Eventi</a>
