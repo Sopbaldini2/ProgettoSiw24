@@ -20,6 +20,12 @@
   <body>
     <div class="container">
         <h2>Dettagli Servizio</h2>
+        <img th:src="@{'/images/servizi/' + ${servizio.image}}" alt="Immagine del servizio">
+          <!-- Video -->
+        <video width="320" height="240" controls>
+            <source src="percorso_del_video.mp4" type="video/mp4">
+            Il tuo browser non supporta il tag video.
+        </video>
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" value="Nome del Servizio" readonly>

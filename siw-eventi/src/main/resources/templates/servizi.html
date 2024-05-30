@@ -1,22 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lista servizi</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/servizii.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
 
-<head>
-	<title>Servizi</title>
-	<link rel="stylesheet" href="/css/style.css" />
-</head>
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/evento">Eventi</a>
+				<a href="/servizi">Servizi</a>
+				<a href="/recensione">Community</a>
+				<a href="/dipendente">About us</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+				<a href="/login" class="fas fa-user"></a>
+			</div>			
+			
+			
+		</header>
+		
+        <!-- header section ends -->
+        
+        <!-- Servizi section starts -->
+      <div class="servizi_main"> 
+        <h1>Servizi</h1>
+        <div th:if="${servizi==null || servizi.isEmpty()}">Non ci sono servizi nel sistema</div>
 
-<body>
+        <ul>
+			<li th:each="servizio : ${servizi}">
+				<div class="box">
+					<div class="content">
+						<h3 th:text="${servizio.nome}"></h3>
+						<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
+                    </div>
+                    <div class="servizio_image">
+						<img th:src="@{'/images/servizi/' + ${servizio.image}}" >
+					</div> 
+                    <div class="icons">
+						<a th:href="@{'/servizio/' + ${servizio.id}}" class="fas fa-info-circle"></a>
+                    </div>
+               </div>
+           </li>
+       </ul>
+     </div>   
+       
+	     <!-- Servizi section ends -->
+	
+         <!-- footer section starts -->
+         
+         <section class="footer">
+			 <div class="box-container">
+				 <div class="box">
+					 <h3>Quick Links</h3>
+					 <a href="/">Home</a>
+					 <a href="/dipendente">About us</a>
+					 <a href="/evento">Eventi</a>
+					 <a href="/servizio">Servizi</a>
+					 <a href="/recensione">Community</a>
+					 <a href="#contact">Contact</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Extra Links</h3>
+					 <a href="/login">My account</a>
+					 <a href="#">My Event</a>
+					 <a href="#">My favourite</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Contact Info</h3>
+					 <a href="#">+39 3319879060</a>
+					 <a href="#">marikamorelli@live.it</a>
+					 <a href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara Sabazia</a>
+					 <img src="images/..." alt="">
+				 </div> 
+			 </div>
+			 
+			 <div class="credit"> Created by <span>Baldini Sophie & Catalano Veronica </span></div>
+		 </section>
+         <!-- footer section ends -->
 
-	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
-	<h1>Servizi</h1>
-	<div th:if="${servizi==null || servizi.isEmpty()}">Non ci sono servizi nel sistema</div>
-	<ul>
-		<li th:each="servizio : ${servizi}">
-			<a th:href="@{'/servizio' + '/' + ${servizio.id}}"
-				th:text="${servizio.nome}">Fotografo</a>
-		</li>
-	</ul>
-</body>
-
+	</body>
+	
 </html>

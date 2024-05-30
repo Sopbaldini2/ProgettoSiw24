@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.siw.model.Recensione;
@@ -39,12 +39,12 @@ public class RecensioneController {
 		}
 	}
 
-	@GetMapping("/recensione/{id}")
+	/*@GetMapping("/recensione/{id}")
 	public String getRecensione(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("recensione", this.recensioneService.findById(id));
 		return "recensione.html";
 	}
-
+*/
 	@GetMapping("/recensione")
 	public String getRecensioni(Model model) {
 		model.addAttribute("recensioni", this.recensioneService.findAll());
