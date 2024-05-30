@@ -15,33 +15,14 @@ body {
     color: #fff;
 }
 
-header {
-    background: transparent;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-size: 3rem;
+body .logo {
+    font-size: 1.5rem;
     font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-
-header .logo span {
-    color: var(--pink);
-}
-
-header a {
-    font-size: 2rem;
-    padding: 0 1.5rem;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-header a:hover {
+body .logo span {
     color: var(--pink);
 }
 
