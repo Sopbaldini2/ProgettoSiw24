@@ -42,7 +42,7 @@ public class EventoController {
 	
 	@GetMapping("/admin/manageEvento")
 	public String manageEvento(Model model) {
-		model.addAttribute("movies", this.eventoService.findAll());
+		model.addAttribute("eventi", this.eventoService.findAll());
 		return "admin/manageEvento.html";
 	}
 	
@@ -52,7 +52,7 @@ public class EventoController {
 		return "admin/formNewEvento.html";
 	}
 
-	@GetMapping(value="/admin/formUpdateEvento/{id}")
+	@GetMapping("/admin/formUpdateEvento/{id}")
 	public String formUpdateEvento(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("evento", eventoService.findById(id));
 		return "admin/formUpdateEvento.html";
