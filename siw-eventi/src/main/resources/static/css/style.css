@@ -146,6 +146,8 @@ header .fa-bars{
 	line-height: 1.5;
 }
 
+/*About*/
+
 .about .row{
 	display: flex;
 	align-items: center;
@@ -200,6 +202,8 @@ header .fa-bars{
 	line-height: 1.5;
 }
 
+/*Icone*/
+
 .icons-container {
 	background: rgb(0, 0, 0) ;
 	display: flex;
@@ -233,6 +237,8 @@ header .fa-bars{
 	color: #999;
 	font-size: 1.3rem;
 }
+
+/*Servizi*/
 
 .servizi .box-container{
 	display: flex;
@@ -327,7 +333,7 @@ header .fa-bars{
 	font-size: 1.5rem;
 	color:#999;
 	font-weight: lighter;
-	text-decoration: line-through;
+	margin-left: 0.5rem;
 }
 
 .servizi .pulsante {
@@ -343,6 +349,8 @@ header .fa-bars{
     left: 50%; /* Sposta l'icona orizzontalmente al centro */
     transform: translate(-50%, -50%);
 }
+
+/*Recensioni*/
 
 .recensione .box-container{
 	display: flex;
@@ -398,6 +406,8 @@ header .fa-bars{
 	color: #333;
 }
 
+/*Contatti*/
+
 .contact .row{
     display:flex;
     flex-wrap:wrap-reverse;
@@ -412,7 +422,6 @@ header .fa-bars{
     border: .1rem solid rgb(255, 255, 255);
     background-repeat: rgb(0, 0, 0);
     border-radius: .5rem;
-
 }
 
 .contact .row .image{
@@ -441,6 +450,8 @@ header .fa-bars{
     height: 15rem;
     resize: none;
 }
+
+/*Footer*/
 
 .footer .box-container{
 	display: flex;
