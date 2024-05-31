@@ -18,6 +18,7 @@ public class Servizio {
 	private String descrizione;
 	private Float prezzo;
 	private String image;
+	private String video;
 	
 	
 	@ManyToMany(mappedBy="servizi")
@@ -88,5 +89,13 @@ public class Servizio {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+	
+	public String getVideo() {
+		return video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
 	}
 }

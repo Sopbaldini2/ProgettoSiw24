@@ -1,44 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Sevizio</title>
-	<link rel="stylesheet" href="/css/style.css" />
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lista servizi</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/serviziio.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
 
-<body> <!--verofoca se serva -->
-	<header>
-		<div th:if="${userDetails}">
-			<span th:text="${userDetails.username}"></span>
-			<a href="/logout">Logout</a>
-		</div>
-		<div th:unless="${user}">
-			<a href="/login">Login</a>
-		</div>
-	</header>
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/evento">Eventi</a>
+				<a href="/servizio">Servizi</a>
+				<a href="/recensione">Community</a>
+				<a href="/dipendente">About us</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+				<a href="/login" class="fas fa-user"></a>
+			</div>			
+			
+			
+		</header>
+		
+        <!-- header section ends -->
+        
+        <!-- Dettagli servizi section starts -->
+ <div class="servizi">
+    <h1>Dettagli <span>Servizi</span></h1>
+    
+    <div th:if="${servizio}">
+        <!-- Immagine del servizio -->
+        <div class="box-container">
+            <div class="box">
+               <!-- <div class="image">
+                    <img th:src="@{'/images/servizi/' + ${servizio.image}}" alt="Immagine del servizio">
+                </div> -->
+                <!-- Video -->
+                <div class="video">
+                    <video autoplay loop muted controls> 
+                       <source th:src="@{'/images/servizi/' + ${servizio.video}}" type="video/mp4" >
+                        Il tuo browser non supporta il tag video.
+                    </video>
+                </div>
+              </div>
+                <!-- Dettagli del servizio -->
+                <div class="content">
+                    <div class="form-group1">
+                        <input type="text" id="nome" name="nome" th:value="${servizio.nome}" readonly>
+                    </div>
 
-<body>
-  <body>
-    <div class="container">
-        <h2>Dettagli Servizio</h2>
-        <img th:src="@{'/images/servizi/' + ${servizio.image}}" alt="Immagine del servizio">
-          <!-- Video -->
-        <video width="320" height="240" controls>
-            <source src="percorso_del_video.mp4" type="video/mp4">
-            Il tuo browser non supporta il tag video.
-        </video>
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" value="Nome del Servizio" readonly>
-        </div>
-        <div class="form-group">
-            <label for="descrizione">Descrizione</label>
-            <textarea id="descrizione" name="descrizione" rows="4" readonly>Descrizione del servizio...</textarea>
-        </div>
-        <div class="form-group">
-            <label for="prezzo">Prezzo (€)</label>
-            <input type="number" id="prezzo" name="prezzo" value="100.00" readonly>
+                    <div class="form-group">
+                        <label for="descrizione">Descrizione</label>
+                        <textarea id="descrizione" name="descrizione" rows="4" th:text="${servizio.descrizione}" readonly></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prezzo">Prezzo (€)</label>
+                        <input type="number" id="prezzo" name="prezzo" th:value="${servizio.prezzo}" readonly>
+                    </div>
+                </div>
+            
         </div>
     </div>
-    <div th:unless="${servizio}">Non esiste</div>
-</body>
+
+    <div th:unless="${servizio}">
+        Non esiste
+    </div>
+</div>
+    
+<!-- Dettagli servizi section ends -->    
+
+<!-- footer section starts -->
+         
+         <section class="footer">
+			 <div class="box-container">
+				 <div class="box">
+					 <h3>Quick Links</h3>
+					 <a href="/">Home</a>
+					 <a href="/dipendente">About us</a>
+					 <a href="/evento">Eventi</a>
+					 <a href="/servizio">Servizi</a>
+					 <a href="/recensione">Community</a>
+					 <a href="#contact">Contact</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Extra Links</h3>
+					 <a href="/login">My account</a>
+					 <a href="#">My Event</a>
+					 <a href="#">My favourite</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Contact Info</h3>
+					 <a href="#">+39 3319879060</a>
+					 <a href="#">marikamorelli@live.it</a>
+					 <a href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara Sabazia</a>
+					 <img src="images/..." alt="">
+				 </div> 
+			 </div>
+			 
+			 <div class="credit"> Created by <span>Baldini Sophie & Catalano Veronica </span></div>
+		 </section>
+         <!-- footer section ends -->
+
+	</body>
+	
 </html>

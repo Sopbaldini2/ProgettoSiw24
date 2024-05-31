@@ -15,11 +15,11 @@ insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipe
 insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Francesco', 'Bavaro', 'francescobavaro@gmail.com', '3890345234');
 insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Sabrina', 'Mancini', 'sabrinamancini@gmail.com', '3875442134');
 
-insert into servizio (id, nome, descrizione, prezzo, image) VALUES (nextval('servizio_seq'), 'Audio/Video', 'Installazione e gestione di attrezzature audio e video', 400, 'audio.png');
-insert into servizio (id, nome, descrizione, prezzo, image) values(nextval('servizio_seq'), 'Fotografia', 'Cattura di momenti speciali attraverso foto e video.', 300, 'fotografo1.png' );
-insert into servizio (id, nome, descrizione, prezzo, image) values(nextval('servizio_seq'), 'Intrattenimento', 'Artisti, musicisti, DJ, animatori e spettacoli per intrattenere gli ospiti.', 2000, 'intrattenimento.png');
-insert into servizio (id, nome, descrizione, prezzo, image) values(nextval('servizio_seq'), 'Catering e Ristorazione', 'Fornitura di cibo e bevande per gli ospiti.', 1500, 'catering.png');
-insert into servizio (id, nome, descrizione, prezzo, image) values(nextval('servizio_seq'), 'Allestimenti e Design', 'Creazione di ambienti, scenografie e allestimenti personalizzati per l’evento.', 1000, 'allestimento.png');
+insert into servizio (id, nome, descrizione, prezzo, image, video) VALUES (nextval('servizio_seq'), 'Audio/Video', 'Installazione e gestione di attrezzature audio e video', 400, 'audio.png', 'drone.mp4');
+insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Fotografia', 'Cattura di momenti speciali attraverso foto e video.', 300, 'fotografo1.png', 'foto.mp4' );
+insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Intrattenimento', 'Artisti, musicisti, DJ, animatori e spettacoli per intrattenere gli ospiti.', 2000, 'intrattenimento.png', 'musica.mp4');
+insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Catering e Ristorazione', 'Fornitura di cibo e bevande per gli ospiti.', 1500, 'catering.png', 'food.mp4');
+insert into servizio (id, nome, descrizione, prezzo, image, video) values(nextval('servizio_seq'), 'Allestimenti e Design', 'Creazione di ambienti, scenografie e allestimenti personalizzati per l’evento.', 1000, 'allestimento.png', 'allestimento.mp4');
 
 INSERT INTO cliente (id, nome, cognome, email, telefono) VALUES (nextval('cliente_seq'), 'Mario', 'Rossi', 'mario.rossi@example.com', '1234567890');
 INSERT INTO cliente (id, nome, cognome, email, telefono) VALUES (nextval('cliente_seq'), 'Giulia', 'Bianchi', 'giulia.bianchi@example.com', '0987654321');
