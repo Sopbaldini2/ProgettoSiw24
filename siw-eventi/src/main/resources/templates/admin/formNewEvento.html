@@ -44,7 +44,7 @@
 		</div>
 		
 		<div>
-			<label>Data:</label> <span><input type="data" th:field="${evento.data}" /></span>
+			<label>Data:</label> <span><input type="date" th:field="${evento.data}" /></span>
 		    <span th:if="${#fields.hasErrors('data')}" th:errors="*{data}">
 		    </span>
 		</div>

@@ -145,37 +145,15 @@ public class EventoController {
 		return serviziToAdd;
 	}
 	
-	@PostMapping("/evento/{id}/recensione")
-    public String aggiungiRecensione(@PathVariable("id") Long id, @ModelAttribute("recensione") Recensione recensione, Model model) {
-        Evento evento = eventoService.findById(id); 
-        recensione.setEvento(evento);
-        recensioneService.save(recensione); 
-        return "redirect:/evento/" +id;
-        }
 	
-	@DeleteMapping("/admin/evento/{eventoId}/recensione/{recensioneId}")
-    public String cancellaRecensione(@PathVariable("eventoId") Long eventoId, @PathVariable("recensioneId") Long recensioneId) {
-        Evento evento = eventoService.findById(eventoId);
-        if (evento != null) {
-            Recensione recensione = recensioneService.findById(recensioneId);
-            if (recensione != null && recensione.getEvento().getId().equals(eventoId)) { 
-                recensioneService.delete(recensioneId); 
-                return "La recensione con ID " + recensioneId + " è stata cancellata con successo.";
-            } else {
-                return "La recensione con ID " + recensioneId + " non appartiene all'evento con ID " + eventoId + ".";
-            }
-        } else {
-            return "Evento con ID " + eventoId + " non trovato.";
-        }
-    }
 	
-	@DeleteMapping("/admin/evento/{id}")
+	@GetMapping("/admin/evento/{id}")
     public String deleteEvento(@PathVariable("id") Long id, Model model) {
         Evento Evento = eventoService.findById(id);
         if (Evento != null) {
             eventoService.delete(Evento);
             // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
-            return "redirect:/admin/indexEvento";
+            return "redirect:/evento";
         } else {
             // Nel caso in cui il Cuoco non esista
             model.addAttribute("messaggioErrore", "Evento non trovato");

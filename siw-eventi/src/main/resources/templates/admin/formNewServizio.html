@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		New Servizio
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1>Aggiungi un servizio</h1>
+	<form th:action="@{/admin/servizio}" method="POST" th:object="${servizio}">
+  		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+  		</div>
+		
+		<div>
+			<label>Nome:</label> 
+			<span><input type="text" th:field="${servizio.nome}" /></span>
+		    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
+		    </span>
+		</div>
+		
+		<div>
+			<label>Prezzo:</label> <span><input type="number" th:field="${servizio.prezzo}" /></span>
+		    <span th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}">
+		    </span>
+		</div>
+
+		<div>
+			<label>Descrizione:</label> <span><input type="text" th:field="${servizio.descrizione}" /></span>
+		    <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}">
+		    </span>
+		</div>
+
+		<!--come inserire la foto e il video!-->
+		
+		
+		<div>
+			<span><button type="submit">Conferma</button></span>
+		</div>
+	</form>
+</body>
+
+</html>

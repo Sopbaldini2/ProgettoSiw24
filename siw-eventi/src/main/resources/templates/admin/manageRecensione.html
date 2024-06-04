@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Recensioni</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
+	<h1>Recensioni</h1>
+	<div th:if="${recensioni==null || recensioni.isEmpty()}"> </div>
+	<ul>
+		<li th:each="recensione : ${recensioni}">
+			<div class="stars">
+                <i class="fas fa-star" th:each="star : ${#numbers.sequence(1, recensione.voto)}"></i>
+            </div>
+			<span th:text="${recensione.commento} ">Up</span>
+		<form th:action="@{'/admin/recensione/' + ${recensione.id}}" method="get">
+            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questa recensione?');">Elimina</button>
+            </form>
+		</li>
+	</ul>
+	
+</body>
+
+</html>

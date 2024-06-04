@@ -23,6 +23,12 @@ public class ServizioController {
 		return "admin/formNewServizio.html";
 	}
 	
+	@GetMapping("/admin/manageServizio")
+	public String manageServizio(Model model) {
+		model.addAttribute("servizi", this.servizioService.findAll());
+		return "admin/manageServizi.html";
+	}
+	
 	@GetMapping(value="/admin/indexServizio")
 	public String indexServizio() {
 		return "admin/indexServizio.html";
@@ -52,13 +58,13 @@ public class ServizioController {
 		return "servizi.html";
 	}
 	
-	@DeleteMapping("/admin/servizio/{id}")
+	@GetMapping("/admin/servizio/{id}")
     public String deleteServizio(@PathVariable("id") Long id, Model model) {
         Servizio servizio = servizioService.findById(id);
         if (servizio != null) {
             servizioService.delete(servizio);
             // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
-            return "redirect:/admin/indexServizio";
+            return "redirect:/servizio";
         } else {
             // Nel caso in cui il servizio non esista
             model.addAttribute("messaggioErrore", "Servizio non trovato");

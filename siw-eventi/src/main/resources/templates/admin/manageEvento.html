@@ -4,34 +4,7 @@
 <head>
 	<title>Evento</title>
 	<link rel="stylesheet" href="/css/stile.css" />
-	<script>
-        async function deleteEvento(eventoId) {
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            
-            try {
-                const response = await fetch(`/admin/evento/${eventoId}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken
-                    }
-                });
-
-                if (response.ok) {
-                    // Redirect or refresh the page after successful deletion
-                    window.location.href = '/admin/indexEvento';
-                } else {
-                    // Log error details
-                    const errorMessage = await response.text();
-                    console.error('Errore nella cancellazione dell\'evento:', errorMessage);
-                    alert('Errore nella cancellazione dell\'evento.');
-                }
-            } catch (error) {
-                console.error('Errore:', error);
-                alert('Errore nella cancellazione dell\'evento.');
-            }
-        }
-    </script>
+	
 </head>
 
 <body>
@@ -47,17 +20,16 @@
 
 	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
 	<h1>Eventi</h1>
-	<div th:if="${eventi==null || eventi.isEmpty()}">Non ci sono eventi nel sistema</div>
+	<div th:if="${eventi==null || eventi.isEmpty()}"> </div>
 	<ul>
 		<li th:each="evento : ${eventi}">
 			<span th:text="${evento.nome} ">Up</span>
 			<a th:href="@{'/admin/formUpdateEvento' + '/' + ${evento.id}}">Aggiorna</a>
-		<button type="button" th:onclick="'deleteEvento(' + ${evento.id} + ')'">Cancella</button>
-		</li>
+			<form th:action="@{'/admin/evento/' + ${evento.id}}" method="get">
+            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo evento?');">Elimina</button>
+            </form>		
+       </li>
 	</ul>
-	
-<!-- CSRF Token -->
-    <meta name="csrf-token" th:content="${_csrf.token}" />
 	
 </body>
 

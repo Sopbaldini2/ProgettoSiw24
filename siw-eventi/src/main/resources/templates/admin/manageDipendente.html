@@ -4,6 +4,7 @@
 <head>
 	<title>Dipendenti</title>
 	<link rel="stylesheet" href="/css/stile.css" />
+	
 </head>
 
 <body>
@@ -17,17 +18,18 @@
 		</div>
 	</header>
 
-	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
 	<h1>Dipendenti</h1>
-
-	<div th:if="${dipendenti==null || dipendenti.isEmpty()}">Non ci sono dipendenti nel sistema</div>
+	<div th:if="${dipendenti==null || dipendenti.isEmpty()}"> </div>
 	<ul>
 		<li th:each="dipendente : ${dipendenti}">
-			<span th:text="${dipendente.nome} + ' ' + ${dipendente.cognome}"></span>
-			<span th:text="' - ' + ${dipendente.email}"> </span>
-			<span th:text="' - ' + ${dipendente.telefono}"></span>
+			<span th:text="${dipendente.nome} ">Up</span>
+		<form th:action="@{'/admin/dipendente/' + ${dipendente.id}}" method="get">
+            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo dipendente?');">Elimina</button>
+            </form>
 		</li>
 	</ul>
+	
 </body>
 
 </html>

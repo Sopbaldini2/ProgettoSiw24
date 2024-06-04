@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Evento</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%" /></a></div>
+	<h1>Servizi</h1>
+	<div th:if="${servizi==null || servizi.isEmpty()}"> </div>
+	<ul>
+		<li th:each="servizio : ${servizi}">
+			<span th:text="${servizio.nome} ">Up</span>
+			<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
+		<form th:action="@{'/admin/servizio/' + ${servizio.id}}" method="get">
+            <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo servizio?');">Elimina</button>
+            </form>
+		</li>
+	</ul>
+	
+</body>
+
+</html>

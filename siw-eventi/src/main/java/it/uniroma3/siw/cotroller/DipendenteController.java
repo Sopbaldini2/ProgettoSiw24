@@ -30,17 +30,11 @@ public class DipendenteController {
 			model.addAttribute("dipendente", dipendente);
 			return "dipendente.html";
 		} else {
-			model.addAttribute("messaggioErrore", "Questo servizio esiste già");
+			model.addAttribute("messaggioErrore", "Questo dipendente esiste già");
 			return "admin/formNewDipendente.html"; 
 		}
 	}
 	
-	@GetMapping("/dipendente/{id}")
-	public String getDipendente(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("dipendente", this.dipendenteService.findById(id));
-		return "dipendente.html";
-	}
-	/*riguarda */
 	@GetMapping("/dipendente")
 	public String getDipendenti(Model model) {
 		model.addAttribute("dipendenti", this.dipendenteService.findAll());
@@ -53,14 +47,20 @@ public class DipendenteController {
 		return "admin/formNewDipendente.html";
 	}
 	
+	@GetMapping("/admin/manageDipendente")
+	public String manageDipendente(Model model) {
+		model.addAttribute("dipendenti", this.dipendenteService.findAll());
+		return "admin/manageDipendente.html";
+	}
 	
-	@DeleteMapping("/admin/dipendente/{id}")
+	
+	@GetMapping("/admin/dipendente/{id}")
     public String deleteDipendente(@PathVariable("id") Long id, Model model) {
         Dipendente dipendente = dipendenteService.findById(id);
         if (dipendente != null) {
             dipendenteService.delete(dipendente);
             // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
-            return "redirect:/admin/indexDipendente";
+            return "redirect:/dipendente";
         } else {
             // Nel caso in cui il servizio non esista
             model.addAttribute("messaggioErrore", "Servizio non trovato");

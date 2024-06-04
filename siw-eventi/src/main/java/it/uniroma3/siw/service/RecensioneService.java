@@ -20,8 +20,8 @@ public class RecensioneService {
 		return recensioneRepository.findById(id).get();
 	}
 	
-	 public void delete(Long recensioneId) {
-	        recensioneRepository.deleteById(recensioneId);
+	 public void delete(Recensione recensione) {
+	        recensioneRepository.delete(recensione);
 	 }
 
 	public boolean existsById(Long id) {
