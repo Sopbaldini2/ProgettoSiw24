@@ -459,11 +459,13 @@ header .fa-bars{
 	gap: 1.5rem;
 }
 
-.footer .box-container .box{
+.footer .box-container .box,
+.footer .box-container .box2{
 	flex:1 1 25rem;
 }
 
-.footer .box-container .box h3{
+.footer .box-container .box h3,
+.footer .box-container .box2 h3{
 	color: #fff;
 	font-size: 2.5rem;
 	padding: 1rem 0;
@@ -484,6 +486,18 @@ header .fa-bars{
 .footer .box-container .box img{
 	margin-top: 1rem;
 }
+
+.footer .box-container .box2 i{
+	color: #fff;
+	font-size: 2.5rem;
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.footer .box-container .box2 i:hover{
+	color: var(--pink);
+}
+
 
 .footer .credit{
 	text-align: center;
