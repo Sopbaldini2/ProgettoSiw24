@@ -1,11 +1,11 @@
-insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Sinfonia delle Stelle', 'Festival', '10-08-2024' ,'concerto sotto il cielo stellato', 'nuvola.png', 70);
+insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Sinfonia delle Stelle', 'Festival', '10-08-2024' ,'concerto sotto il cielo stellato', 'stelle.png', 70);
 insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Avventura nelle nuvole','Sfide verticali', '18-06-2023','esperienza estrema di paracadutismo', 'nuvola.png', 90);
-insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Conferenza delle menti brillanti','Fiera', '24-02-2016','condivisione di conoscenze e idee innovative', 'nuvola.png', 60);
+insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Conferenza delle menti brillanti','Fiera', '24-02-2016','condivisione di conoscenze e idee innovative', 'conferenza.png', 60);
 insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Serata enigmatica','Cena con spettacolo', '07-12-1022','un viaggio nel mistero', 'cenamistero.png', 50);
-insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Mostra dei sapori del Mondo','Evento culinario', '27-04-2013', 'celebrazione delle diversità gastronomiche globali', 'cenamistero.png', 80);
-insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Giornata della Gioia','Festival', '01-01-2021','festa della musica e del benessere', 'cenamistero.png', 70);
-insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Notte dei Racconti Incantati','Evento sociale', '15-08-2024', 'serata di narrazioni e fantasia', 'cenamistero.png', 40);
-
+insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Mostra dei sapori del Mondo','Evento culinario', '27-04-2013', 'celebrazione delle diversità gastronomiche globali', 'sapori.png', 80);
+insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Onda su Onda','Contest', '11-07-2023','festa della musica e del benessere', 'gioia.png', 70);
+insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'Notte dei Racconti Incantati','Evento sociale', '15-08-2024', 'serata di narrazioni e fantasia', 'racconti.png', 40);
+insert into evento (id, nome, tipologia, data, descrizione, image, prezzo) values(nextval('evento_seq'), 'San Valentino','Evento sociale', '14-03-2024', 'Celebra l''amore in una serata magica sotto le stelle nella splendida cornice del ristorante La Vela.', 'sanValentino2.png', 40);
 
 insert into dipendente (id, nome, cognome, email, telefono) VALUES (nextval('dipendente_seq'), 'Alessandro', 'Abete', 'alessandroabete@gmail.com', '3335678902');
 insert into dipendente (id, nome, cognome, email, telefono) values(nextval('dipendente_seq'), 'Martina', 'Bartolini', 'martinabartolini@gmail.com', '3456673498');
