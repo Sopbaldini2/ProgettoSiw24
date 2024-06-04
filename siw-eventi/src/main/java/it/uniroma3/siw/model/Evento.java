@@ -28,6 +28,7 @@ public class Evento {
 	private Float prezzo;
 	private String descrizione;
 	private String tipologia;
+	private String image;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data;
 	
@@ -116,5 +117,10 @@ public class Evento {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 }
