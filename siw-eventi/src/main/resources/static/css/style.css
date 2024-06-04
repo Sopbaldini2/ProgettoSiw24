@@ -488,8 +488,9 @@ header .fa-bars{
 }
 
 .footer .box-container .box2 i{
+	margin-top: 1rem;
 	color: #fff;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	margin-right: 2rem;
 	cursor: pointer;
 }
