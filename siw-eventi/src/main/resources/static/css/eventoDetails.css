@@ -1,0 +1,306 @@
+:root{
+	--pink: #e84393;	
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition: .2s linear;
+}
+
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+	overflow-x: hidden;
+	background: rgb(0, 0, 0);
+}
+
+section{
+	padding: 2rem 9%;
+}
+
+.btn{
+	display: inline-block;
+	margin-top: 1rem;
+	border-radius: 5rem;
+	background: #fff;
+	color: #333;
+	padding: .9rem 3.5rem;
+	cursor: pointer;
+	font-size: 1.7rem;
+}
+
+.btn:hover{
+	background: var(--pink) ;
+}
+ 
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgb(0, 0, 0);
+	padding: 2rem 9%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index:1000 ;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0.1);
+}
+
+header .logo{
+	font-size: 3rem;
+	color: #fff;
+	font-weight: bolder;	
+}
+
+header .logo span{
+	color: var(--pink);
+}
+
+header .navbar a{
+	font-size: 2rem;
+	padding: 0 1.5rem;
+	color: #fff;
+}
+
+header .navbar a:hover{
+	color: var(--pink);
+}
+
+header .icons a{
+	font-size: 2.5rem;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 1.5rem;
+}
+
+header .icons a:hover{
+	color: var(--pink);
+}
+
+header #toggler{
+	display: none;
+}
+
+header .fa-bars{
+	font-size: 3rem;
+	color: #fff;
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	border: .1rem solid rgb(255, 255, 255);
+	display: none;
+}
+
+/*Title*/
+
+.eventi_section h1 {
+    text-align: center;
+	font-size: 4rem;
+	color: #fff;
+	padding: 5rem;
+	margin: 4rem 0;
+}
+
+.eventi_section h1 span {
+    color: var(--pink);
+}
+
+/* Dettagli Eventi */
+
+.eventi_details {
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.eventi_details img {
+    display: block;
+    margin: 0 auto;
+    width: 50%; 
+    max-width: 300px; 
+}
+
+.eventi_details .titolo {
+    margin-top: 20px;
+    color: #e84393;
+    font-style: italic;
+}
+
+.eventi_details .titolo span {
+    font-weight: bold;
+    font-size: 32px; /* Aumento della dimensione del testo */
+    display: block; /* Per distanziare ulteriormente il titolo dal resto */
+}
+
+.eventi_details .data,
+.eventi_details .price,
+.eventi_details .tipologia,
+.eventi_details .caratteristiche {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.eventi_details .data span,
+.eventi_details .price span,
+.eventi_details .tipologia span,
+.eventi_details .caratteristiche span {
+    font-size: 18px;
+}
+
+.eventi_details .caratteristiche label{
+	font-weight: bold;
+	font-size: 18px;
+	color: rgb(238, 17, 221);
+}
+
+/*Footer*/
+
+.footer .box-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.footer .box-container .box,
+.footer .box-container .box2{
+	flex:1 1 25rem;
+}
+
+.footer .box-container .box h3,
+.footer .box-container .box2 h3{
+	color: #fff;
+	font-size: 2.5rem;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+	display: block;
+	color: #666;
+	font-size: 1.5rem;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+	color: var(--pink);
+	text-decoration:underline ;
+}
+
+.footer .box-container .box img{
+	margin-top: 1rem;
+}
+
+.footer .box-container .box2 i{
+	margin-top: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.footer .box-container .box2 i:hover{
+	color: var(--pink);
+}
+
+
+.footer .credit{
+	text-align: center;
+	padding: 1.5rem;
+	margin-top: 1.5rem;
+	padding-top: 2.5rem;
+	font-size: 2rem;
+	color:rgb(255, 255, 255);
+	border-top: .1rem solid rgb(255, 255, 255);
+}
+
+.footer .credit span{
+	color: var(--pink);
+}
+
+
+
+
+
+
+/*media queries*/
+@media (max-width:991px){
+	html{
+	font-size: 55%;
+	}
+	
+	header{
+		padding: 2rem;
+	}
+	
+	section{
+		padding: 2rem;
+	}
+	
+	.home{
+		background-position: left;
+	}
+}	
+
+	
+@media (max-width:768px){
+	
+	header .fa-bars{
+		display: block;
+	}
+	
+	header .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #eee;
+		border-top: .1rem solid rgb(255, 255, 255);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	
+	header #toggler:checked ~ .navbar {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+	
+	header .navbar a{
+		margin: 1.5rem;
+		padding: 1.5rem;
+		background: #333;
+		border: .1rem solid rgb(255, 255, 255);
+		display: block;
+	}
+	
+	.home .content h3{
+		font-size: 5rem;
+	}
+	
+	.home .content span{
+		font-size: 2.5rem;
+	}	
+	
+	.icons-container .icons h3{
+	    font-size: 2rem;
+    }
+
+    .icons-container .icons span{
+	    font-size: 1.7rem;
+    }
+}
+
+@media (max-width:450px){
+	html{
+	font-size: 50%;
+	}
+	
+	.heading{
+		font-size: 3rem;
+	}	
+  }
