@@ -3,19 +3,25 @@ package it.uniroma3.siw.cotroller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import it.uniroma3.siw.controller.validator.EventoValidator;
+import it.uniroma3.siw.controller.validator.ServizioValidator;
 import it.uniroma3.siw.model.Servizio;
 import it.uniroma3.siw.service.ServizioService;
+import jakarta.validation.Valid;
 
 @Controller
 public class ServizioController {
 	@Autowired 
 	private ServizioService servizioService;
+	@Autowired
+	private ServizioValidator servizioValidator;
 
 	@GetMapping(value="/admin/formNewServizio")
 	public String formNewServizio(Model model) {
@@ -35,13 +41,13 @@ public class ServizioController {
 	}
 	
 	@PostMapping("/admin/servizio")
-	public String newServizio(@ModelAttribute("servizio") Servizio servizio, Model model) {
-		if (!servizioService.existsByNome(servizio.getNome())) {
+	public String newServizio( @Valid @ModelAttribute("servizio") Servizio servizio,BindingResult bindingResult, Model model) {
+		this.servizioValidator.validate(servizio, bindingResult);
+		if (!bindingResult.hasErrors()) {
 			this.servizioService.save(servizio); 
 			model.addAttribute("servizio", servizio);
 			return "servizio.html";
 		} else {
-			model.addAttribute("messaggioErrore", "Questo servizio esiste già");
 			return "admin/formNewServizio.html"; 
 		}
 	}

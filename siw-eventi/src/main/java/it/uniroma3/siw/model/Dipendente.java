@@ -8,16 +8,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Dipendente {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-	
+	@NotBlank(message = "{dipendente.nome.notblank}")
 	private String nome;
+	@NotBlank(message = "{dipendente.cognome.notblank}")
 	private String cognome;
+	@NotBlank(message = "{dipendente.email.notblank}")
 	private String email;
+	@NotBlank(message = "{dipendente.telefono.notblank}")
 	private String telefono;
 	
 	@Override

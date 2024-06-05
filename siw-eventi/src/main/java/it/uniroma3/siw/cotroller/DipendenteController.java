@@ -3,20 +3,26 @@ package it.uniroma3.siw.cotroller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import it.uniroma3.siw.controller.validator.DipendenteValidator;
+import it.uniroma3.siw.controller.validator.EventoValidator;
 import it.uniroma3.siw.model.Dipendente;
 import it.uniroma3.siw.service.DipendenteService;
+import jakarta.validation.Valid;
 
 @Controller
 public class DipendenteController {
 
 	@Autowired
 	private DipendenteService dipendenteService;
+	@Autowired
+	private DipendenteValidator dipendenteValidator;
 	
 	@GetMapping("/admin/indexDipendente")
 	public String indexDipendente() {
@@ -24,13 +30,14 @@ public class DipendenteController {
 	}
 	
 	@PostMapping("/admin/dipendente")
-	public String newDipendente(@ModelAttribute("dipendente") Dipendente dipendente, Model model) {
-		if (!dipendenteService.existsByNomeAndCognome(dipendente.getNome(), dipendente.getCognome())) {
+	public String newDipendente(@Valid @ModelAttribute("dipendente") Dipendente dipendente, BindingResult bindingResult,Model model) {
+		
+		this.dipendenteValidator.validate(dipendente, bindingResult);
+		if (!bindingResult.hasErrors()) {
 			this.dipendenteService.save(dipendente); 
 			model.addAttribute("dipendente", dipendente);
 			return "redirect:/dipendente";
 		} else {
-			model.addAttribute("messaggioErrore", "Questo dipendente esiste già");
 			return "admin/formNewDipendente.html"; 
 		}
 	}

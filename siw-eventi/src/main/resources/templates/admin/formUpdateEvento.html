@@ -32,6 +32,7 @@
                 <p><strong>Descrizione:</strong> <span th:text="${evento.descrizione}">descrizione</span></p>
                 <p><strong>Data:</strong> <span th:text="${evento.data}">10-12-2006</span></p>
                 <p><strong>Tipologia:</strong> <span th:text="${evento.tipologia}">tipologia</span></p>
+                <img th:src="@{'/images/eventi/' + ${evento.image}}" alt="Immagine dell'evento">
             </section>
 
             <section class="servizi-info">
@@ -40,6 +41,10 @@
                     <li th:each="servizio : ${evento.servizi}">
                         <p><strong>Nome:</strong> <span th:text="${servizio.nome}">Nome</span></p>
                         <p><strong>Descrizione:</strong> <span th:text="${servizio.descrizione}">descrizione</span></p>
+                        <p><strong>Prezzo:</strong> <span th:text="${servizio.prezzo}">prezzo</span></p>
+                        <div class="servizio_image">
+						    <img th:src="@{'/images/servizi/' + ${servizio.image}}" >
+					    </div> 
                     </li>
                 </ul>
                 <div th:if="${evento.servizi}">

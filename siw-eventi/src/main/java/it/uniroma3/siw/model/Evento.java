@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,12 +22,15 @@ public class Evento {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
-	@NotBlank
+	@NotBlank(message = "{evento.nome.notblank}")
 	private String nome;
 	@NotNull
 	@Min(10)
 	private Float prezzo;
+	@Column(columnDefinition = "TEXT")
+	@NotBlank(message = "{evento.descrizione.notblank}")
 	private String descrizione;
+	@NotBlank(message = "{evento.tipologia.notblank}")
 	private String tipologia;
 	private String image;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

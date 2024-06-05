@@ -21,6 +21,10 @@
 	<ul>
 		<li th:each="servizio : ${evento.servizi}">
 			<span th:text="${servizio.nome}"> </span>
+			<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
+		    <div class="servizio_image">
+				<img th:src="@{'/images/servizi/' + ${servizio.image}}" >
+			</div>
 			<a th:href="@{'/admin/removeServizioFromEvento/'+ ${servizio.id}+'/'+${evento.id}}">Cancella</a>
 		</li>
 	</ul>
@@ -29,6 +33,10 @@
 		<ul>
 			<li th:each="servizio : ${serviziToAdd}">
 				<span th:text="${servizio.nome}"></span>
+				<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
+		        <div class="servizio_image">
+				     <img th:src="@{'/images/servizi/' + ${servizio.image}}" >
+			    </div>
 				<a th:href="@{'/admin/addServizioToEvento/'+ ${servizio.id}+'/'+${evento.id}}">Aggiungi</a>
 			</li>
 		</ul>

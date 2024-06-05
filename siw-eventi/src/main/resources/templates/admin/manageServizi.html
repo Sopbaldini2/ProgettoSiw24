@@ -24,9 +24,12 @@
 		<li th:each="servizio : ${servizi}">
 			<span th:text="${servizio.nome} ">Up</span>
 			<div class="price">Prezzo <span th:text="'€' + ${servizio.prezzo}"></span></div>
+		    <div class="servizio_image">
+				<img th:src="@{'/images/servizi/' + ${servizio.image}}" >
+			</div>
 		<form th:action="@{'/admin/servizio/' + ${servizio.id}}" method="get">
             <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo servizio?');">Elimina</button>
-            </form>
+        </form>
 		</li>
 	</ul>
 	

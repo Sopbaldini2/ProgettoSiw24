@@ -24,6 +24,11 @@
 	<ul>
 		<li th:each="evento : ${eventi}">
 			<span th:text="${evento.nome} ">Up</span>
+			<img th:src="@{'/images/eventi/' + ${evento.image}}" alt="Immagine dell'evento">
+			<div class="tipo">
+                <span th:text="${evento.tipologia}"> evento </span>
+			</div>
+			
 			<a th:href="@{'/admin/formUpdateEvento' + '/' + ${evento.id}}">Aggiorna</a>
 			<form th:action="@{'/admin/evento/' + ${evento.id}}" method="get">
             <button type="submit" onclick="return confirm('Sei sicuro di voler eliminare questo evento?');">Elimina</button>
