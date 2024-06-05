@@ -28,7 +28,7 @@ public class DipendenteController {
 		if (!dipendenteService.existsByNomeAndCognome(dipendente.getNome(), dipendente.getCognome())) {
 			this.dipendenteService.save(dipendente); 
 			model.addAttribute("dipendente", dipendente);
-			return "dipendente.html";
+			return "redirect:/dipendente";
 		} else {
 			model.addAttribute("messaggioErrore", "Questo dipendente esiste già");
 			return "admin/formNewDipendente.html"; 

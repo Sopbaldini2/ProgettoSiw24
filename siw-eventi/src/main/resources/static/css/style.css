@@ -147,6 +147,9 @@ header .fa-bars{
 }
 
 /*About*/
+.about {
+    margin-top: 50px; /* Modifica questo valore in base alla distanza desiderata dalla parte superiore della pagina */
+}
 
 .about .row{
 	display: flex;

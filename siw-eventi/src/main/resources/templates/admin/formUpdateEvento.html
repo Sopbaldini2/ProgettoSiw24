@@ -42,12 +42,14 @@
                         <p><strong>Descrizione:</strong> <span th:text="${servizio.descrizione}">descrizione</span></p>
                     </li>
                 </ul>
-                <a th:href="@{'/admin/updateServizi/' + ${evento.id}}">
-                    <button type="button">Modifica</button>
-                </a>
+                <div th:if="${evento.servizi}">
+                    <a th:href="@{'/admin/updateServizi/' + ${evento.id}}">
+                        <button type="button">Modifica</button>
+                    </a>
+                </div>
+                <div th:unless="${evento.servizi}">Non ci sono servizi associati a questo evento</div>
             </section>
         </div>
-        <div th:unless="${servizio}">Servizio non esistente</div>
     </main>
 
 </body>
