@@ -1,0 +1,96 @@
+:root{
+	--pink: #e84393;	
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile del body */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/banner2.png'); /* Aggiungi l'URL dell'immagine */
+    background-size: cover; /* Copertura dell'immagine su tutta la pagina */
+    background-repeat: no-repeat; /* Nessuna ripetizione dell'immagine */
+    background-attachment: fixed; /* L'immagine rimane fissa durante lo scroll */
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Stile della sezione hero */
+.hero {
+    color: #000;
+    padding: 50px;
+    text-align: center;
+    height: 100vh; /* Altezza della viewport */
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    
+}
+
+/* Stile del titolo */
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: var(--pink);
+}
+
+/* Stile del paragrafo */
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Stile del form */
+.hero form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+    height: 100%; /* Altezza massima del contenitore */
+    max-width: 500px; /* Larghezza massima del form */
+}
+
+/* Stile del label */
+.hero label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Stile dell'input */
+.hero input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Stile del pulsante */
+.hero input[type="submit"] {
+    padding: 10px 20px;
+    background-color: var(--pink);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Effetto hover sul pulsante */
+.hero input[type="submit"]:hover {
+    background-color: #ff1493;
+}
+
+.attributo i{
+	color: var(--pink);
+	margin-left: .2rem;
+}
+
+.attributo i:hover {
+	color: #000;
+}

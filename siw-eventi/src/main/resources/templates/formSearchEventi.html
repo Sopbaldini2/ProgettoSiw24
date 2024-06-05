@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ricerca Eventi</title>
-</head>
-<body>
-    <h2>Ricerca Eventi</h2>
-    
-	<h1>Cerca evento per nome</h1>
-	<form th:action="@{/searchEventi}" method="post">
-		<div>Nome: <input type="text" th:value="${nome}" name="nome" />
-		</div>
-		<div><input type="submit" /></div>
-	</form>
-</body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi - Ricerca</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/search.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	
+	<body>
+		
+		<section class="hero">
+        <div class="hero-content">
+            <h1>Ricerca Eventi</h1>
+            <form th:action="@{/searchEventi}" method="post">
+                <div class="attributo">
+                    <input type="text" id="nome" name="nome" placeholder="Nome" />
+                    <a href="/"><i class="fa-solid fa-x"></i></a>
+                </div>
+                <div><input type="submit" value="Cerca" /></div>
+            </form>
+        </div>
+    </section>
+		
+	</body>
+	
+</html>	
