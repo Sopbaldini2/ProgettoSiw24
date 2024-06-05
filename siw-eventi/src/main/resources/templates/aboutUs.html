@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agenzia Eventi</title>
+		
+		<!--comando per legare una libreria che migliora le performance e riduce i tempi di caricamento-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+		
+		<!--comando per legare un foglio di stile esterno all'html-->
+		<link rel="stylesheet" href="/css/style.css">
+		
+		<link rel="shortcut icon" href="/images/iconaM.png "type="image/x-icon">
+	</head>
+	<body>
+		
+		<header>
+			
+			<input type="checkbox" name="" id="toggler">
+			<label for="toggler" class="fas fa-bars"></label>
+			
+			<a href="/" class="logo"> Marik'<span>Events</span></a>
+
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/evento">Eventi</a>
+				<a href="/servizio">Servizi</a>
+				<a href="/recensione">Community</a>
+				<a href="/aboutUs">About us</a>
+			</nav>
+			
+			<div class="icons">
+				<a href="/formSearchEventi" class="fas fa-search"></a>
+				<a href="/login" class="fas fa-user"></a>
+			</div>			
+			
+			
+		</header>
+		
+		
+		<!-- About Us start -->
+         
+         <section class="about" id="about">
+			 <h1 class="heading"><span>About</span> Us</h1>
+			 
+			 <div class="row">
+				 
+			 <div class="video-container">
+				 <video src="/images/animatori.mp4" loop autoplay muted></video>
+				 <h3> The best of us </h3>
+			 </div>
+			 
+			 <div class="content">
+				 <h3>Perchè scegliere noi?</h3>
+				 <p>Siamo un team di professionisti degli eventi, uniti dalla passione per l'eccellenza. Ogni evento che creiamo è un'esperienza unica, curata con attenzione ai dettagli e piena di emozioni indimenticabili.</p>
+                 <p>Con anni di esperienza nel settore, siamo esperti nell'arte di trasformare le tue visioni in realtà mozzafiato. Ogni dettaglio del tuo evento è curato con precisione, garantendo un risultato impeccabile che ti lascerà senza fiato.</p>
+                 <p>Ci impegniamo a superare le tue aspettative, offrendo soluzioni creative e sorprendenti che lasciano un'impronta indelebile nella memoria di tutti i partecipanti. Dalla pianificazione iniziale alla realizzazione finale, lavoriamo a stretto contatto con te per garantire che ogni aspetto del tuo evento sia perfetto.</p>
+                  <p>Con Marik'Events, puoi essere certo che il tuo evento sarà non solo straordinario, ma anche indimenticabile. Affidati al nostro team di esperti per trasformare ogni momento in un'esperienza straordinaria, ricca di emozioni e bellezza.</p>
+				 
+			 </div>
+			 </div>
+		 </section>
+         <!-- About us ends -->
+         
+         <!-- contact section starts -->
+         <section class="contact" id="contact">
+			 <h1 class="heading"> <span> contact </span> us </h1>
+             <div class="row">
+             <form action="https://api.web3forms.com/submit" method="POST">
+				 <input type="hidden" name="access_key" value="50f856cb-200b-4169-8dd3-8d1ff39e57e7">
+				 <input type="text" placeholder="name" name="name" class="box" required>
+                 <input type="email" placeholder="email" name="email" class="box" required>
+                 <input type="number" placeholder="number" name="number" class="box" required>
+                 <textarea name="message" class="box" placeholder="message"  id="" cols="30" rows="10" required></textarea>
+                 <input type="submit" value="send message" class="btn">
+             </form>
+
+             <div class="image">
+				 <img src="images/contact-img.svg" alt="">
+             </div>
+             </div>
+
+         </section>
+         <!-- contact section ends -->
+         
+         <!-- footer section starts -->
+         <section class="footer">
+			 <div class="box-container">
+				 <div class="box">
+					 <h3>Quick Links</h3>
+					 <a href="/">Home</a>
+					 <a href="/aboutUs">About us</a>
+					 <a href="/evento">Eventi</a>
+					 <a href="/servizio">Servizi</a>
+					 <a href="/recensione">Community</a>
+					 <a href="#contact">Contact</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Extra Links</h3>
+					 <a href="/login">My account</a>
+					 <a href="#">My Event</a>
+					 <a href="#">My favourite</a>
+				 </div>
+				 
+				  <div class="box">
+					 <h3>Contact Info</h3>
+					 <a href="#">+39 3319879060</a>
+					 <a href="#">marikamorelli@live.it</a>
+					 <a href="https://www.google.com/search?q=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&rlz=1C1GCEA_enIT827IT827&oq=Via+di+S.+Stefano%2C+20%2C+00061+Anguillara+Sabazia+RM&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABiABBiiBDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIKCAQQABiABBiiBDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDE2NjlqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">Anguillara Sabazia</a>
+					 <img src="images/..." alt="">
+				 </div> 
+				 
+				 <div class="box2">
+					 <h3>Follows</h3>
+					 <a href="https://www.facebook.com/Marikevents/?locale=it_IT"><i class="fa-brands fa-facebook"></i></a>
+					 <a href="https://www.instagram.com/marikevents/?locale=it"><i class="fa-brands fa-instagram"></i></a>
+					 <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+				 </div>
+			 </div>
+			 
+			 <div class="credit"> Created by <span>Baldini Sophie & Catalano Veronica </span></div>
+		 </section>
+         <!-- footer section ends -->
+
+	</body>
+	
+</html>

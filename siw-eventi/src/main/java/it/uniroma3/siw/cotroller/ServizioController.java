@@ -62,7 +62,7 @@ public class ServizioController {
     public String deleteServizio(@PathVariable("id") Long id, Model model) {
         Servizio servizio = servizioService.findById(id);
         if (servizio != null) {
-            servizioService.delete(servizio);
+            servizioService.deleteById(id);
             // Redirect alla pagina dell'indice dei servizi dopo la cancellazione
             return "redirect:/servizio";
         } else {

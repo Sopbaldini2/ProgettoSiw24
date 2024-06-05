@@ -5,7 +5,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.model.Servizio;
+import it.uniroma3.siw.model.Servizio;
 import it.uniroma3.siw.repository.ServizioRepository;
+import jakarta.transaction.Transactional;
 
 @Service
 public class ServizioService {
@@ -33,7 +35,11 @@ public class ServizioService {
 		return servizioRepository.existsByNome(nome);
 	}
 	
-	 public void delete(Servizio servizio) {
-	        servizioRepository.delete(servizio);
-	 }
+	
+	 @Transactional
+		public void deleteById(Long id) {
+			Servizio Servizio = findById(id);
+			servizioRepository.deleteReferencesInEventiServizi(id);
+			servizioRepository.delete(Servizio);
+		}
 }

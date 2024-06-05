@@ -83,6 +83,11 @@ public class EventoController {
 		return "eventi.html";
 	}
 	
+	@GetMapping("/aboutUs")
+	public String getUs() {		
+		return "aboutUs.html";
+	}
+	
 	@GetMapping("/formSearchEventi")
 	public String formSearchEventi() {
 		return "formSearchEventi.html";
