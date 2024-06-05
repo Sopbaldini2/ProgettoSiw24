@@ -20,7 +20,7 @@
 		<section class="hero">
         <div class="hero-content">
             <h1>Ricerca Eventi</h1>
-            <form action="/searchEventi" method="post">
+            <form th:action="@{/searchEventi}" method="post">
                 <div class="attributo">
                     <input type="text" id="nome" name="nome" placeholder="Nome" />
                     <a href="/"><i class="fa-solid fa-x"></i></a>
